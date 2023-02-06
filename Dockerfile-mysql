@@ -1,0 +1,8 @@
+# Use the MySQL 8.0 image as a base
+FROM mysql:8.0
+
+# Set the MySQL root password
+ENV MYSQL_ROOT_PASSWORD=root
+
+# Create a database for the Rails application
+ENV MYSQL_DATABASE=ffxg
