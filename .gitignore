@@ -6,7 +6,7 @@
 
 # Ignore bundler config.
 /.bundle
-/.env
+.env
 /instances/ffxg/dbpassword/dbpassword
 # Ignore all logfiles and tempfiles.
 /log/*
