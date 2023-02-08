@@ -21,15 +21,3 @@ services:
       - ./instances/$FFXG_DB/dbpassword/:/dbpassword/
     depends_on:
       - redis
-
-  sidekiq:
-    build:
-      context: .
-      dockerfile: ./Dockerfile
-    depends_on:
-      - redis
-    volumes:
-      - /var/run/mysqld/:/var/run/mysqld/
-      - ./:/ffxg/
-      - ./instances/$FFXG_DB/dbpassword/:/dbpassword/
-    command: "./docker/entrypoint-sidekiq.sh"
