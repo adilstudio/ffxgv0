@@ -1,10 +1,11 @@
 version: '3'
 services:
-
   redis:
     image: redis:6.2-alpine
+    ports:
+      - "6379:6379"
 
-  web:
+  app:
     build:
       context: .
       dockerfile: Dockerfile
@@ -15,9 +16,49 @@ services:
       - REDIS_PORT=6379
       - DB_NAME=$FFXG_DB
       - DB_USER=$FFXG_USER
+      - DB_PASSWORD=$DB_PASSWORD
+    ports:
+      - ${FFXG_HOST_PORT-3000}:3000
     volumes:
       - /var/run/mysqld/:/var/run/mysqld/
       - ./:/ffxg/
       - ./instances/$FFXG_DB/dbpassword/:/dbpassword/
     depends_on:
+      - init
       - redis
+      - sidekiq
+    command: "/ffxg/docker/entrypoint.sh"
+    stdin_open: true
+    tty: true
+
+  sidekiq:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - DB_NAME=$FFXG_DB
+      - DB_USER=$FFXG_USER
+      - DB_PASSWORD=$DB_PASSWORD
+    depends_on:
+      - redis
+      - init
+    volumes:
+      - /var/run/mysqld/:/var/run/mysqld/
+      - ./:/ffxg/
+      - ./instances/$FFXG_DB/dbpassword/:/dbpassword/
+    command: "/ffxg/docker/entrypoint-sidekiq.sh"
+
+  init:
+    build:
+      context: ./docker
+      dockerfile: ./Dockerfile.init
+    environment:
+      - DB_NAME=$DB_NAME
+      - DB_USER=$DB_USER
+      - DB_PASSWORD=$DB_PASSWORD
+      - FFXGWEB_DOMAIN=$FFXGWEB_DOMAIN
+    volumes:
+      - /var/run/mysqld/:/var/run/mysqld/
+      - ./instances/:/instances/
