@@ -17,6 +17,7 @@ services:
       - DB_NAME=$FFXG_DB
       - DB_USER=$FFXG_USER
       - DB_PASSWORD=$DB_PASSWORD
+      - FFXG_HOST_PORT=$FFXG_HOST_PORT
     ports:
       - ${FFXG_HOST_PORT-3000}:3000
     volumes:
