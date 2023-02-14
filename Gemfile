@@ -27,6 +27,16 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+gem "redis"
+gem "sidekiq"
+gem 'sidekiq-cron'
+gem 'nokogiri'
+gem 'mini_portile2'
+gem 'rake'
+
+# Gems used only for development environment
+gem "byebug", "=9.1.0"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
