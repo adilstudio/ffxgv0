@@ -2,7 +2,7 @@
 FROM ruby:2.7.0-alpine as builder
 
 # Set the working directory
-WORKDIR /ffgx
+WORKDIR /ffxg
 
 RUN gem install bundler -v 2.3.20 --no-document
 
@@ -16,12 +16,6 @@ RUN apk --no-cache add git npm mariadb-dev nodejs yarn openjdk8-jre mysql-client
   cp /usr/share/zoneinfo/Europe/Paris /etc/localtime && \
   echo "Europe/Paris" > /etc/timezone
 
-# Copy the Gemfile and Gemfile.lock
-COPY Gemfile Gemfile.lock /ffgx/
-
-# Install the gems
-RUN bundle install
-
 RUN adduser -D bundler
 
 USER root
@@ -29,15 +23,19 @@ USER root
 RUN --mount=type=cache,target=/home/bundler/bundle,id=bundler \
   chown bundler: -R /home/bundler/bundle
 
-
 USER bundler
 
 # --without development test
 
 COPY --chown=bundler:bundler . /ffxg/
 
+# Copy the Gemfile and Gemfile.lock
+COPY Gemfile Gemfile.lock /ffxg/
 USER root
-RUN chown -R 1000:1000 /ffgx
+# Install the gems
+RUN bundle install
+
+RUN chown -R 1000:1000 /ffxg
 
 # Set the default command to run the Rails server
 #CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
