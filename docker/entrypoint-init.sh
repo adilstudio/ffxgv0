@@ -15,7 +15,7 @@ echo "Done!"
 
 DB_PASSWORD_FILE="/ffxg/instances/$DB_NAME/dbpassword/dbpassword"
 
-if [ "$(mysql -BN -e "SELECT EXISTS(SELECT 1 FROM mysql.user WHERE user = \"$DB_USER\")")" = "0" ]; then
+if [ "$(mysql -u"$DB_USER" -p"$DB_PASSWORD" "$DB_NAME" -e "SELECT EXISTS(SELECT 1 FROM mysql.user WHERE user = \"$DB_USER\")")" = "0" ]; then
     echo "MySQL user $DB_NAME doesn't exist."
     if [ -e "$DB_PASSWORD_FILE" ]; then
         echo "Loading MySQL password from $DB_PASSWORD_FILE"
@@ -27,18 +27,18 @@ if [ "$(mysql -BN -e "SELECT EXISTS(SELECT 1 FROM mysql.user WHERE user = \"$DB_
     fi
     echo "Creating MySQL user $DB_NAME"
     echo $DB_PASSWORD
-    mysql -e "CREATE USER \"$DB_USER\"@\"localhost\" IDENTIFIED BY \"$DB_PASSWORD\""
+    mysql -u"$DB_USER" -p"$DB_PASSWORD" "$DB_NAME" -e "CREATE USER \"$DB_USER\"@\"localhost\" IDENTIFIED BY \"$DB_PASSWORD\""
     echo "Done!"
 else
     echo "MySQL user $DB_USER exists."
 fi
-if [ "$(mysql -BN -e "SELECT EXISTS(SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = \"$DB_NAME\");")" = 0 ]; then
+if [ "$(mysql -u"$DB_USER" -p"$DB_PASSWORD" "$DB_NAME" -e  "SELECT EXISTS(SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = \"$DB_NAME\");")" = 0 ]; then
     echo "Creating MySQL database $DB_NAME"
-    mysql -e "CREATE DATABASE \`$DB_NAME\`"
+    mysql -u"$DB_USER" -p"$DB_PASSWORD" "$DB_NAME" -e "CREATE DATABASE \`$DB_NAME\`"
     echo "Done!"
 else
     echo "MySQL database $DB_NAME exists."
 fi
 echo "Granting/fixing privileges"
-mysql -e "GRANT ALL PRIVILEGES ON \`$DB_NAME\`.* TO \"$DB_USER\"@\"localhost\""
+mysql -u"$DB_USER" -p"$DB_PASSWORD" "$DB_NAME" -e "GRANT ALL PRIVILEGES ON \`$DB_NAME\`.* TO \"$DB_USER\"@\"localhost\""
 echo "Done!"
