@@ -34,4 +34,4 @@ echo "Done"
 # cleanup pid file usefull for dev
 rm -f tmp/pids/*
 # Server
-/ffxg/bin/rails server
+/ffxg/bin/rails server -b 0.0.0.0
