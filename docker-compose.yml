@@ -9,6 +9,11 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      target: builder
+    depends_on:
+      - init
+      - redis
+      - sidekiq
     environment:
       - REDIS_HOST=redis
       - REDIS_PORT=6379
@@ -22,10 +27,6 @@ services:
       - /var/run/mysqld/:/var/run/mysqld/
       - ./:/ffxg/
       - ./instances/$FFXG_DB/dbpassword/:/dbpassword/
-    depends_on:
-      - init
-      - redis
-      - sidekiq
     command: "/ffxg/docker/entrypoint.sh"
     stdin_open: true
     tty: true
@@ -34,6 +35,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      target: builder
     environment:
       - REDIS_HOST=redis
       - REDIS_PORT=6379

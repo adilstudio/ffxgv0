@@ -1,13 +1,15 @@
 class CreatePlayers < ActiveRecord::Migration[7.0]
   def change
-    create_table :players do |t|
-      t.integer :api_id
-      t.string :full_name
-      t.string :commun_name
-      t.string :position
-      t.integer :team_api_id
+    unless table_exists?(:players)
+      create_table :players do |t|
+        t.integer :api_id
+        t.string :full_name
+        t.string :commun_name
+        t.string :position
+        t.integer :team_api_id
 
-      t.timestamps
+        t.timestamps
+      end
     end
   end
 end
