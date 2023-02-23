@@ -1,0 +1,62 @@
+<%= form_with(model: team_event) do |form| %>
+  <% if team_event.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(team_event.errors.count, "error") %> prohibited this team_event from being saved:</h2>
+
+      <ul>
+        <% team_event.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :type, style: "display: block" %>
+    <%= form.text_field :type %>
+  </div>
+
+  <div>
+    <%= form.label :detail, style: "display: block" %>
+    <%= form.text_field :detail %>
+  </div>
+
+  <div>
+    <%= form.label :comments, style: "display: block" %>
+    <%= form.text_area :comments %>
+  </div>
+
+  <div>
+    <%= form.label :time_elapsed, style: "display: block" %>
+    <%= form.number_field :time_elapsed %>
+  </div>
+
+  <div>
+    <%= form.label :time_extra, style: "display: block" %>
+    <%= form.text_field :time_extra %>
+  </div>
+
+  <div>
+    <%= form.label :fixture_api_id, style: "display: block" %>
+    <%= form.number_field :fixture_api_id %>
+  </div>
+
+  <div>
+    <%= form.label :team_api_id, style: "display: block" %>
+    <%= form.number_field :team_api_id %>
+  </div>
+
+  <div>
+    <%= form.label :player_api_id, style: "display: block" %>
+    <%= form.number_field :player_api_id %>
+  </div>
+
+  <div>
+    <%= form.label :assist_player_api_id, style: "display: block" %>
+    <%= form.number_field :assist_player_api_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

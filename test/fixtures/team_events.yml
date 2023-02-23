@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  detail: MyString
+  comments: MyText
+  time_elapsed: 1
+  time_extra: 1.5
+  fixture_api_id: 1
+  team_api_id: 1
+  player_api_id: 1
+  assist_player_api_id: 1
+
+two:
+  type: 
+  detail: MyString
+  comments: MyText
+  time_elapsed: 1
+  time_extra: 1.5
+  fixture_api_id: 1
+  team_api_id: 1
+  player_api_id: 1
+  assist_player_api_id: 1
