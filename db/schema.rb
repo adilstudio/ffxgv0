@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_21_225024) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_23_212313) do
   create_table "countries", charset: "utf8mb4", force: :cascade do |t|
     t.string "country_code"
     t.string "name"
@@ -56,6 +56,20 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_21_225024) do
     t.string "commun_name", limit: 50, collation: "utf8mb4_general_ci"
     t.string "position", limit: 50, collation: "utf8mb4_general_ci"
     t.integer "team_api_id"
+  end
+
+  create_table "team_events", charset: "utf8mb4", force: :cascade do |t|
+    t.string "type"
+    t.string "detail"
+    t.text "comments"
+    t.integer "time_elapsed"
+    t.float "time_extra"
+    t.integer "fixture_api_id"
+    t.integer "team_api_id"
+    t.integer "player_api_id"
+    t.integer "assist_player_api_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "teams", charset: "utf8mb4", force: :cascade do |t|
