@@ -1,0 +1,197 @@
+<%= form_with(model: team_stat) do |form| %>
+  <% if team_stat.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(team_stat.errors.count, "error") %> prohibited this team_stat from being saved:</h2>
+
+      <ul>
+        <% team_stat.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :offsides, style: "display: block" %>
+    <%= form.number_field :offsides %>
+  </div>
+
+  <div>
+    <%= form.label :games_minutes, style: "display: block" %>
+    <%= form.text_field :games_minutes %>
+  </div>
+
+  <div>
+    <%= form.label :games_number, style: "display: block" %>
+    <%= form.number_field :games_number %>
+  </div>
+
+  <div>
+    <%= form.label :games_position, style: "display: block" %>
+    <%= form.text_field :games_position %>
+  </div>
+
+  <div>
+    <%= form.label :games_rating, style: "display: block" %>
+    <%= form.text_field :games_rating %>
+  </div>
+
+  <div>
+    <%= form.label :games_captain, style: "display: block" %>
+    <%= form.check_box :games_captain %>
+  </div>
+
+  <div>
+    <%= form.label :games_substitute, style: "display: block" %>
+    <%= form.check_box :games_substitute %>
+  </div>
+
+  <div>
+    <%= form.label :shots_total, style: "display: block" %>
+    <%= form.number_field :shots_total %>
+  </div>
+
+  <div>
+    <%= form.label :shots_on, style: "display: block" %>
+    <%= form.number_field :shots_on %>
+  </div>
+
+  <div>
+    <%= form.label :goals_total, style: "display: block" %>
+    <%= form.number_field :goals_total %>
+  </div>
+
+  <div>
+    <%= form.label :goals_conceded, style: "display: block" %>
+    <%= form.number_field :goals_conceded %>
+  </div>
+
+  <div>
+    <%= form.label :goals_assists, style: "display: block" %>
+    <%= form.number_field :goals_assists %>
+  </div>
+
+  <div>
+    <%= form.label :goals_saves, style: "display: block" %>
+    <%= form.number_field :goals_saves %>
+  </div>
+
+  <div>
+    <%= form.label :passes_total, style: "display: block" %>
+    <%= form.number_field :passes_total %>
+  </div>
+
+  <div>
+    <%= form.label :passes_key, style: "display: block" %>
+    <%= form.number_field :passes_key %>
+  </div>
+
+  <div>
+    <%= form.label :passes_accuracy, style: "display: block" %>
+    <%= form.number_field :passes_accuracy %>
+  </div>
+
+  <div>
+    <%= form.label :tackles_total, style: "display: block" %>
+    <%= form.number_field :tackles_total %>
+  </div>
+
+  <div>
+    <%= form.label :tackles_blocks, style: "display: block" %>
+    <%= form.number_field :tackles_blocks %>
+  </div>
+
+  <div>
+    <%= form.label :tackles_interceptions, style: "display: block" %>
+    <%= form.number_field :tackles_interceptions %>
+  </div>
+
+  <div>
+    <%= form.label :duels_total, style: "display: block" %>
+    <%= form.number_field :duels_total %>
+  </div>
+
+  <div>
+    <%= form.label :duels_won, style: "display: block" %>
+    <%= form.number_field :duels_won %>
+  </div>
+
+  <div>
+    <%= form.label :dribbles_attempts, style: "display: block" %>
+    <%= form.number_field :dribbles_attempts %>
+  </div>
+
+  <div>
+    <%= form.label :dribbles_success, style: "display: block" %>
+    <%= form.number_field :dribbles_success %>
+  </div>
+
+  <div>
+    <%= form.label :dribbles_past, style: "display: block" %>
+    <%= form.number_field :dribbles_past %>
+  </div>
+
+  <div>
+    <%= form.label :fouls_drawn, style: "display: block" %>
+    <%= form.number_field :fouls_drawn %>
+  </div>
+
+  <div>
+    <%= form.label :fouls_committed, style: "display: block" %>
+    <%= form.number_field :fouls_committed %>
+  </div>
+
+  <div>
+    <%= form.label :cards_yellow, style: "display: block" %>
+    <%= form.number_field :cards_yellow %>
+  </div>
+
+  <div>
+    <%= form.label :cards_red, style: "display: block" %>
+    <%= form.number_field :cards_red %>
+  </div>
+
+  <div>
+    <%= form.label :penalty_won, style: "display: block" %>
+    <%= form.number_field :penalty_won %>
+  </div>
+
+  <div>
+    <%= form.label :penalty_commited, style: "display: block" %>
+    <%= form.number_field :penalty_commited %>
+  </div>
+
+  <div>
+    <%= form.label :penalty_scored, style: "display: block" %>
+    <%= form.number_field :penalty_scored %>
+  </div>
+
+  <div>
+    <%= form.label :penalty_missed, style: "display: block" %>
+    <%= form.number_field :penalty_missed %>
+  </div>
+
+  <div>
+    <%= form.label :penalty_saved, style: "display: block" %>
+    <%= form.number_field :penalty_saved %>
+  </div>
+
+  <div>
+    <%= form.label :player_api_id, style: "display: block" %>
+    <%= form.number_field :player_api_id %>
+  </div>
+
+  <div>
+    <%= form.label :team_api_id, style: "display: block" %>
+    <%= form.number_field :team_api_id %>
+  </div>
+
+  <div>
+    <%= form.label :fixture_api_id, style: "display: block" %>
+    <%= form.number_field :fixture_api_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
