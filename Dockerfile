@@ -34,8 +34,5 @@ COPY Gemfile Gemfile.lock /ffxg/
 USER root
 # Install the gems
 RUN bundle install
-
+EXPOSE 3000
 RUN chown -R 1000:1000 /ffxg
-
-# Set the default command to run the Rails server
-#CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]

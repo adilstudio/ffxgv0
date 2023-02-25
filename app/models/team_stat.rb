@@ -1,2 +1,0 @@
-class TeamStat < ApplicationRecord
-end

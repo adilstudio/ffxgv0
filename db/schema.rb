@@ -10,31 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_23_212313) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_24_225022) do
   create_table "countries", charset: "utf8mb4", force: :cascade do |t|
     t.string "country_code"
     t.string "name"
     t.string "flag"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "fixtures", charset: "utf8mb4", force: :cascade do |t|
-    t.integer "fixture_api_id"
-    t.string "referee"
-    t.string "timezone"
-    t.datetime "date"
-    t.integer "timestamp"
-    t.float "periods_first"
-    t.float "periods_second"
-    t.integer "venue_id"
-    t.string "venue_name"
-    t.string "venue_city"
-    t.string "status_long"
-    t.string "status_short"
-    t.float "status_elapsed"
-    t.integer "league_api_id"
-    t.integer "teams_home_api_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -68,6 +48,47 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_23_212313) do
     t.integer "team_api_id"
     t.integer "player_api_id"
     t.integer "assist_player_api_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "team_stats", charset: "utf8mb4", force: :cascade do |t|
+    t.integer "offsides"
+    t.float "games_minutes"
+    t.integer "games_number"
+    t.string "games_position"
+    t.float "games_rating"
+    t.boolean "games_captain"
+    t.boolean "games_substitute"
+    t.integer "shots_total"
+    t.integer "shots_on"
+    t.integer "goals_total"
+    t.integer "goals_conceded"
+    t.integer "goals_assists"
+    t.integer "goals_saves"
+    t.integer "passes_total"
+    t.integer "passes_key"
+    t.integer "passes_accuracy"
+    t.integer "tackles_total"
+    t.integer "tackles_blocks"
+    t.integer "tackles_interceptions"
+    t.integer "duels_total"
+    t.integer "duels_won"
+    t.integer "dribbles_attempts"
+    t.integer "dribbles_success"
+    t.integer "dribbles_past"
+    t.integer "fouls_drawn"
+    t.integer "fouls_committed"
+    t.integer "cards_yellow"
+    t.integer "cards_red"
+    t.integer "penalty_won"
+    t.integer "penalty_commited"
+    t.integer "penalty_scored"
+    t.integer "penalty_missed"
+    t.integer "penalty_saved"
+    t.integer "player_api_id"
+    t.integer "team_api_id"
+    t.integer "fixture_api_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

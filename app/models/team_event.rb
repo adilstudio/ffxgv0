@@ -1,2 +1,0 @@
-class TeamEvent < ApplicationRecord
-end
