@@ -1,59 +1,721 @@
--- MySQL dump 10.13  Distrib 5.5.62, for Win64 (AMD64)
---
--- Host: localhost    Database: ffxg
--- ------------------------------------------------------
--- Server version	5.5.5-10.3.34-MariaDB-0ubuntu0.20.04.1
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Table structure for table `players`
---
-
-DROP TABLE IF EXISTS `players`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `players` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `api_id` int(11) DEFAULT NULL,
-  `full_name` varchar(50) DEFAULT NULL,
-  `commun_name` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `position` varchar(50) CHARACTER SET utf8mb4 DEFAULT NULL,
-  `team_api_id` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=615 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `players`
---
-
-LOCK TABLES `players` WRITE;
-/*!40000 ALTER TABLE `players` DISABLE KEYS */;
-INSERT INTO `players` VALUES (1,167663,'Tom McGill','T. McGill','GKP',51),(2,18959,'Robert Sánchez','Robert Sánchez','GKP',51),(3,18960,'Jason Steele','J. Steele','GKP',51),(4,152953,'Levi Colwill','L. Colwill','DEF',51),(5,18963,'Lewis Dunk','L. Dunk','DEF',51),(6,46731,'Pervis Estupiñán','P. Estupiñán','DEF',51),(7,69257,'James Furlong','J. Furlong','DEF',51),(8,138815,'Tariq Lamptey','T. Lamptey','DEF',51),(9,282254,'Odeluga Offiah','O. Offiah','DEF',51),(10,138874,'Antef Tsoungui','A. Tsoungui','DEF',51),(11,280672,'Ed Turns','E. Turns','DEF',51),(12,38695,'Jan Paul van Hecke','J. van Hecke','DEF',51),(13,537,'Joël Veltman','J. Veltman','DEF',51),(14,19265,'Adam Webster','A. Webster','DEF',51),(15,17715,'Steven Alzate','S. Alzate','MID',51),(16,311334,'Facundo Buonanotte','F. Buonanotte','MID',51),(17,116117,'Moisés Caicedo','M. Caicedo','MID',51),(18,130423,'Billy Gilmour','B. Gilmour','MID',51),(19,18970,'Pascal Groß','P. Groß','MID',51),(20,296121,'Jack Hinchy','J. Hinchy','MID',51),(21,305730,'Jack Hinshelwood','J. Hinshelwood','MID',51),(22,295,'Adam Lallana','A. Lallana','MID',51),(23,6716,'Alexis Mac Allister','A. Mac Allister','MID',51),(24,18973,'Solomon March','S. March','MID',51),(25,106835,'Kaoru Mitoma','K. Mitoma','MID',51),(26,40911,'Jakub Moder','J. Moder','MID',51),(27,137220,'Andy Moran','A. Moran','MID',51),(28,1093,'Enock Mwepu','E. Mwepu','MID',51),(29,216809,'Cameron Peupion','C. Peupion','MID',51),(30,202086,'Jeremy Sarmiento','J. Sarmiento','MID',51),(31,138881,'Jack Spong','J. Spong','MID',51),(32,1946,'Leandro Trossard','Leandro Trossard','MID',51),(33,70747,'Julio Enciso','J. Enciso','FWD',51),(34,129643,'Evan Ferguson','E. Ferguson','FWD',51),(35,26475,'Deniz Undav','Deniz Undav','FWD',51),(36,1469,'Danny Welbeck','Daniel Nii Tackie Mensah Welbeck','FWD',51),(37,20355,'Aaron Ramsdale','A. Ramsdale','GKP',42),(38,50999,'Matt Turner','M. Turner','GKP',42),(39,169295,'Karl Hein','K. Hein','GKP',42),(40,138843,'James Hillson','J. Hillson','GKP',42),(41,1440,'Rob Holding','R. Holding','DEF',42),(42,22224,'Gabriel Magalhães','Gabriel Magalhães','DEF',42),(43,22090,'William Saliba','W. Saliba','DEF',42),(44,190,'Cédric Soares','Cédric Soares','DEF',42),(45,284439,'Lino Sousa','L. Sousa','DEF',42),(46,1117,'Kieran Tierney','K. Tierney','DEF',42),(47,2597,'Takehiro Tomiyasu','T. Tomiyasu','DEF',42),(48,19959,'Benjamin White','B. White','DEF',42),(49,641,'Oleksandr Zinchenko','O. Zinchenko','DEF',42),(50,278075,'C?t?lin Cîrjan','C.Cîrjan','MID',42),(51,309501,'Amario Cozier-Duberry','A. Cozier-Duberry','MID',42),(52,1452,'Mohamed Elneny','Mohamed Elneny','MID',42),(53,311520,'Marquinhos','Marcus Vinícius Oliveira Alencar','MID',42),(54,127769,'Gabriel Martinelli','Gabriel Teodoro Martinelli Silva','MID',42),(55,727,'Reiss Nelson','R. Nelson','MID',42),(56,313236,'Ethan Nwaneri','E. Nwaneri','MID',42),(57,37127,'Martin Ødegaard','M. Ødegaard','MID',42),(58,49,'Thomas Partey','T. Partey','MID',42),(59,1427,'Albert Sambi Lokonga','A. Lokonga','MID',42),(60,1460,'Bukayo Saka','B. Saka','MID',42),(61,167658,'Matthew Smith','M. Smith','MID',42),(62,1161,'Emile Smith Rowe','E. Smith Rowe','MID',42),(63,41725,'Fábio Vieira','Fábio Vieira','MID',42),(64,1464,'Granit Xhaka','G. Xhaka','MID',42),(65,284062,'Khayon Edwards','K. Edwards','FWD',42),(66,643,'Gabriel Jesus','Gabriel Fernando de Jesus','FWD',42),(67,1468,'Eddie Nketiah','E. Nketiah','FWD',42),(68,NULL,'Nathan Butler-Oyedeji',NULL,'FWD',42),(69,19599,'Emiliano Martínez','E. Martínez','GKP',66),(70,766,'Robin Olsen','R. Olsen','GKP',66),(71,19174,'Jed Steer','J. Steer','GKP',66),(72,138937,'Filip Marschall','F. Marschall','GKP',66),(73,2852,'Ludwig Augustinsson','L. Augustinsson','DEF',66),(74,2999,'Jan Bednarek','J. Bednarek','DEF',66),(75,284457,'Lamare Bogarde','L. Bogarde','DEF',66),(76,2724,'Lucas Digne','L. Digne','DEF',66),(77,21090,'Diego Carlos','Diego Carlos','DEF',66),(78,19298,'Matthew Cash','M. Cash','DEF',66),(79,19016,'Calum Chambers','C. Chambers','DEF',66),(80,312118,'Josh Feeney','J. Feeney','DEF',66),(81,21636,'Frédéric Guilbert','F. Guilbert','DEF',66),(82,19354,'Ezri Konsa','E. Konsa','DEF',66),(83,19179,'Tyrone Mings','T. Mings','DEF',66),(84,894,'Ashley Young','A. Young','DEF',66),(85,983,'Leon Bailey','Leon Patrick Bailey Butler','MID',66),(86,19071,'Emiliano Buendía','E. Buendía','MID',66),(87,147,'Philippe Coutinho','Philippe Coutinho','MID',66),(88,2922,'Leander Dendoncker','L. Dendoncker','MID',66),(89,1904,'Boubacar Kamara','B. Kamara','MID',66),(90,47522,'Douglas Luiz','Douglas Luiz','MID',66),(91,19191,'John McGinn','J. McGinn','MID',66),(92,76,'Marvelous Nakamba','M. Nakamba','MID',66),(93,19192,'Jacob Ramsey','J. Ramsey','MID',66),(94,1914,'Morgan Sanson','M. Sanson','MID',66),(95,312260,'Kadan Young','K. Young','MID',66),(96,137302,'Cameron Archer','Cameron Desmond Archer','FWD',66),(97,18955,'Danny Ings','Daniel William John Ings','FWD',66),(98,19366,'Ollie Watkins','Oliver George Arthur Watkins','FWD',66),(99,151756,'Will Dennis','W. Dennis','GKP',35),(100,912,'Norberto Neto','Neto','GKP',35),(101,382166,'Cameron Plain','C. Plain','GKP',35),(102,18860,'Mark Travers','M. Travers','GKP',35),(103,382929,'Chris Francis','Chris Francis','DEF',35),(104,18815,'Ryan Fredericks','R. Fredericks','DEF',35),(105,290962,'Ben Greenwood','B. Greenwood','DEF',35),(106,20093,'James Hill','J. Hill','DEF',35),(107,19263,'Lloyd Kelly','L. Kelly','DEF',35),(108,18866,'Chris Mepham','C. Mepham','DEF',35),(109,6610,'Marcos Senesi','M. Senesi','DEF',35),(110,18869,'Adam Smith','A. Smith','DEF',35),(111,19769,'Jack Stacey','J. Stacey','DEF',35),(112,18940,'Jack Stephens','J. Stephens','DEF',35),(113,19824,'Jordan Zemura','J. Zemura','DEF',35),(114,196855,'Jaidon Anthony','Jaidon Anthony','MID',35),(115,2734,'Philip Billing','P. Billing','MID',35),(116,18870,'David Brooks','D. Brooks','MID',35),(117,1125,'Ryan Christie','R. Christie','MID',35),(118,18872,'Lewis Cook','L. Cook','MID',35),(119,19964,'Siriki Dembélé','S. Dembélé','MID',35),(120,2490,'Jefferson Lerma','J. Lerma','MID',35),(121,19866,'Jamal Lowe','Jamal Akua Lowe','MID',35),(122,19356,'Emiliano Marcondes','E. Marcondes','MID',35),(123,382930,'Ferdinand Okoh','Ferdinand Okoh','MID',35),(124,19454,'Ben Pearson','B. Pearson','MID',35),(125,19482,'Joe Rothwell','J. Rothwell','MID',35),(126,334725,'Dominic Sadi','Dominic Sadi','MID',35),(127,18878,'Junior Stanislas','J. Stanislas','MID',35),(128,19245,'Marcus Tavernier','M. Tavernier','MID',35),(129,382167,'Jack Wadham','Jack Wadham','MID',35),(130,382160,'Daniel Adu-Adjei','D. Adu-Adjei','FWD',35),(131,19804,'Kieffer Moore','Kieffer Roberto Francisco Moore','FWD',35),(132,18883,'Dominic Solanke','Dominic Ayodele Solanke-Mitchell','FWD',35),(133,1835,'Matthew Cox','M. Cox','GKP',65),(134,19465,'David Raya','David Raya','GKP',65),(135,278041,'Thomas Strakosha','T. Strakosha','GKP',65),(136,1119,'Kristoffer Ajer','K. Ajer','DEF',65),(137,19352,'Sergi Canós','Sergi Canós','DEF',65),(138,191337,'Tristan Crama','T. Crama','DEF',65),(139,17772,'Charlie Goode','C. Goode','DEF',65),(140,19346,'Rico Henry','R. Henry','DEF',65),(141,44871,'Aaron Hickey','A. Hickey','DEF',65),(142,19124,'Pontus Jansson','P. Jansson','DEF',65),(143,18917,'Ben Mee','B. Mee','DEF',65),(144,19789,'Ethan Pinnock','E. Pinnock','DEF',65),(145,15745,'Mads Roerslev Rasmussen','M. Rasmussen','DEF',65),(146,2731,'Zanka','Mathias Jattah-Njie Jørgensen','DEF',65),(147,20110,'Shandon Baptiste','S. Baptiste','MID',65),(148,15908,'Mikkel Damsgaard','M. Damsgaard','MID',65),(149,19362,'Josh Dasilva','Pelenda Joshua Tunga Dasilva','MID',65),(150,2699,'Saman Ghoddos','Saman Ghoddos','MID',65),(151,25073,'Vitaly Janelt','V. Janelt','MID',65),(152,47438,'Mathias Jensen','M. Jensen','MID',65),(153,106725,'Keane Lewis-Potter','Keane William Lewis-Potter','MID',65),(154,30407,'Christian Nørgaard','C. Nørgaard','MID',65),(155,15799,'Frank Onyeka','F. Onyeka','MID',65),(156,382925,'Ryan Trevitt','R. Trevitt','MID',65),(157,263538,'Yegor Yarmolyuk','E. Yarmolyuk','MID',65),(158,20649,'Yoane Wissa','Yoane Wissa','MID',65),(159,215873,'Alexander Gilbert','A. Gilbert','FWD',65),(160,20589,'Bryan Mbeumo','Bryan Mbeumo','FWD',65),(161,19974,'Ivan Toney','Ivan Toney','FWD',65),(162,303667,'Eddie Beach','E. Beach','GKP',49),(163,19012,'Marcus Bettinelli','M. Bettinelli','GKP',49),(164,2986,'Edouard Mendy','É. Mendy','GKP',49),(165,2273,'Kepa Arrizabalaga','Kepa','GKP',49),(166,2280,'César Azpilicueta','Azpilicueta','DEF',49),(167,181796,'Josh Brooking','J. Brooking','DEF',49),(168,19720,'Trevoh Chalobah','T. Chalobah','DEF',49),(169,2933,'Benjamin Chilwell','B. Chilwell','DEF',49),(170,47380,'Marc Cucurella','Marc Cucurella','DEF',49),(171,22094,'Wesley Fofana','W. Fofana','DEF',49),(172,284406,'Alfie Gilchrist','A. Gilchrist','DEF',49),(173,NULL,NULL,NULL,'DEF',49),(174,181797,'Bashir Humphreys','B. Humphreys','DEF',49),(175,19545,'Reece James','R. James','DEF',49),(176,318,'Kalidou Koulibaly','K. Koulibaly','DEF',49),(177,259,'Thiago Silva','Thiago Silva','DEF',49),(178,270507,'Cesare Casadei','C. Casadei','MID',49),(179,138935,'Carney Chukwuemeka','C. Chukwuemeka','MID',49),(180,284405,'Ben Elliott','B. Elliott','MID',49),(181,67972,'Conor Gallagher','C. Gallagher','MID',49),(182,284492,'Lewis Hall','L. Hall','MID',49),(183,284428,'Omari Hutchinson','O. Giraud-Hutchinson','MID',49),(184,2289,'Jorginho','Jorginho','MID',49),(185,2291,'Mateo Kovacic','M. Kova?i?','MID',49),(186,2290,'N\'Golo Kanté','N. Kanté','MID',49),(187,2292,'Ruben Loftus-Cheek','R. Loftus-Cheek','MID',49),(188,19220,'Mason Mount','M. Mount','MID',49),(189,17,'Christian Pulisic','C. Pulisic','MID',49),(190,162114,'Dion Rankine','D. Rankine','MID',49),(191,645,'Raheem Sterling','Raheem Shaquille Sterling','MID',49),(192,284442,'Charlie Webster','C. Webster','MID',49),(193,2810,'Denis Zakaria','D. Zakaria','MID',49),(194,548,'Hakim Ziyech','H. Ziyech','MID',49),(195,1465,'Pierre-Emerick Aubameyang','P. Aubameyang','FWD',49),(196,138822,'Armando Broja','Armando Broja','FWD',49),(197,331563,'Mason Burstow','M. Burstow','FWD',49),(198,291476,'David Datro Fofana','D. Fofana','FWD',49),(199,978,'Kai Havertz','K. Havertz','FWD',49),(200,284459,'Malik Mothersille','M. Mothersille','FWD',49),(201,284554,'Owen Goodman','O.Goodman','GKP',52),(202,18835,'Vicente Guaita','Guaita','GKP',52),(203,19143,'Sam Johnstone','S. Johnstone','GKP',52),(204,284549,'Joseph Whitworth','J. Whitworth','GKP',52),(205,2729,'Joachim Andersen','J. Andersen','DEF',52),(206,106086,'Kofi Balmer','K. Balmer','DEF',52),(207,18862,'Nathaniel Clyne','N. Clyne','DEF',52),(208,127605,'Nathan Ferguson','N. Ferguson','DEF',52),(209,67971,'Marc Guéhi','M. Guéhi','DEF',52),(210,182201,'Tyrick Mitchell','T. Mitchell','DEF',52),(211,126949,'Chris Richards','C. Richards','DEF',52),(212,18844,'James Tomkins','J. Tomkins','DEF',52),(213,18847,'Joel Ward','J. Ward','DEF',52),(214,3428,'Jordan Ayew','Jordan Pierre Ayew','MID',52),(215,3339,'Cheick Doucouré','C. Doucouré','MID',52),(216,328808,'Malcolm Ebiowei','M. Ebiowei','MID',52),(217,19586,'Eberechi Eze','E. Eze','MID',52),(218,18806,'Will Hughes','W. Hughes','MID',52),(219,18849,'James McArthur','J. McArthur','MID',52),(220,18852,'Luka Milivojevic','L. Milivojevi?','MID',52),(221,19617,'Michael Olise','M. Olise','MID',52),(222,304320,'David Ozoh','D. Ozoh','MID',52),(223,270357,'Killian Phillips','K. Phillips','MID',52),(224,18853,'Jairo Riedewald','J. Riedewald','MID',52),(225,301295,'Kaden Rodney','K. Rodney','MID',52),(226,18843,'Jeffrey Schlupp','J. Schlupp','MID',52),(227,284551,'Jack Wells-Morrison','J. Wells-Morrison','MID',52),(228,3247,'Wilfried Zaha','Dazet Wilfried Armel Zaha','MID',52),(229,1135,'Odsonne Edouard','Odsonne Édouard','FWD',52),(230,266203,'John-Kymani Gordon','J. Gordon','FWD',52),(231,25927,'Jean-Philippe Mateta','Jean-Philippe Mateta','FWD',52),(232,284554,'Owen Goodman','O.Goodman','GKP',45),(233,18835,'Vicente Guaita','Guaita','GKP',45),(234,19143,'Sam Johnstone','S. Johnstone','GKP',45),(235,284549,'Joseph Whitworth','J. Whitworth','GKP',45),(236,2729,'Joachim Andersen','J. Andersen','DEF',45),(237,106086,'Kofi Balmer','K. Balmer','DEF',45),(238,18862,'Nathaniel Clyne','N. Clyne','DEF',45),(239,127605,'Nathan Ferguson','N. Ferguson','DEF',45),(240,67971,'Marc Guéhi','M. Guéhi','DEF',45),(241,182201,'Tyrick Mitchell','T. Mitchell','DEF',45),(242,126949,'Chris Richards','C. Richards','DEF',45),(243,18844,'James Tomkins','J. Tomkins','DEF',45),(244,18847,'Joel Ward','J. Ward','DEF',45),(245,3428,'Jordan Ayew','Jordan Pierre Ayew','MID',45),(246,3339,'Cheick Doucouré','C. Doucouré','MID',45),(247,328808,'Malcolm Ebiowei','M. Ebiowei','MID',45),(248,19586,'Eberechi Eze','E. Eze','MID',45),(249,18806,'Will Hughes','W. Hughes','MID',45),(250,18849,'James McArthur','J. McArthur','MID',45),(251,18852,'Luka Milivojevic','L. Milivojevi?','MID',45),(252,19617,'Michael Olise','M. Olise','MID',45),(253,304320,'David Ozoh','D. Ozoh','MID',45),(254,270357,'Killian Phillips','K. Phillips','MID',45),(255,18853,'Jairo Riedewald','J. Riedewald','MID',45),(256,301295,'Kaden Rodney','K. Rodney','MID',45),(257,18843,'Jeffrey Schlupp','J. Schlupp','MID',45),(258,284551,'Jack Wells-Morrison','J. Wells-Morrison','MID',45),(259,3247,'Wilfried Zaha','Dazet Wilfried Armel Zaha','MID',45),(260,1135,'Odsonne Edouard','Odsonne Édouard','FWD',45),(261,266203,'John-Kymani Gordon','J. Gordon','FWD',45),(262,25927,'Jean-Philippe Mateta','Jean-Philippe Mateta','FWD',45),(263,1438,'Bernd Leno','B. Leno','GKP',36),(264,19657,'Marek Rodák','M. Rodák','GKP',36),(265,19145,'Tosin Adarabioyo','T. Adarabioyo','DEF',36),(266,288121,'Luciano D\'Auria-Henry','L. D\'Auria-Henry','DEF',36),(267,18814,'Issa Diop','I. Diop','DEF',36),(268,18962,'Shane Duffy','S. Duffy','DEF',36),(269,263,'Layvin Kurzawa','L. Kurzawa','DEF',36),(270,946,'Kevin Mbabu','K. Mbabu','DEF',36),(271,153412,'Connor McAvoy','C. McAvoy','DEF',36),(272,284471,'Stefan Parkes','S. Parkes','DEF',36),(273,19023,'Tim Ream','T. Ream','DEF',36),(274,19549,'Antonee Robinson','A. Robinson','DEF',36),(275,657,'Kenny Tete','K. Tete','DEF',36),(276,19025,'Tom Cairney','T. Cairney','MID',36),(277,18751,'Ivan Cavaleiro','Ivan Ricardo Neves Abreu Cavaleiro','MID',36),(278,18803,'Nathaniel Chalobah','N. Chalobah','MID',36),(279,19004,'Bobby De Cordova-Reid','Bobby Armani De Cordova-Reid','MID',36),(280,129707,'Tyrese Francois','T. Francois','MID',36),(281,359386,'Martial Godo','M. Godo','MID',36),(282,284475,'Luke Harris','L. Harris','MID',36),(283,19329,'Daniel James','D. James','MID',36),(284,19027,'Neeskens Kebano','N. Kebano','MID',36),(285,18972,'Anthony Knockaert','A. Knockaert','MID',36),(286,278087,'Ollie O\'Neill','O. O\'Neill','MID',36),(287,19393,'Josh Onomah','J. Onomah','MID',36),(288,278059,'Adrion Pajaziti','A. Pajaziti','MID',36),(289,41104,'João Palhinha','João Palhinha','MID',36),(290,899,'Andreas Pereira','Andreas Pereira','MID',36),(291,19480,'Harrison Reed','H. Reed','MID',36),(292,335116,'Kristian Šekularac','K. S?ekularac','MID',36),(293,697,'Manor Solomon','M. Solomon','MID',36),(294,2294,'Willian','Willian','MID',36),(295,19221,'Harry Wilson','H. Wilson','MID',36),(296,174174,'Terry Ablade','T. Ablade','FWD',36),(297,2825,'Aleksandar Mitrovi?','Aleksandar Mitrovi?','FWD',36),(298,191971,'Jay Stansfield','J. Stansfield','FWD',36),(299,104,'Carlos Vinícius','Carlos Vinícius','FWD',36),(300,278240,'Harry Christy','H. Christy','GKP',63),(301,39105,'Kristoffer Klaesson','K. Klaesson','GKP',63),(302,20619,'Illan Meslier','I. Meslier','GKP',63),(303,1558,'Joel Robles','Joel Robles','GKP',63),(304,19116,'Luke Ayling','L. Ayling','DEF',63),(305,19118,'Liam Cooper','L. Cooper','DEF',63),(306,19126,'Stuart Dallas','S. Dallas','DEF',63),(307,153411,'Cody Drameh','C. Drameh','DEF',63),(308,1564,'Junior Firpo','Junior Firpo','DEF',63),(309,297187,'Leo Fuhr Hjelde','L. Hjelde','DEF',63),(310,26238,'Robin Koch','R. Koch','DEF',63),(311,533,'Rasmus Kristensen','R. Kristensen','DEF',63),(312,47302,'Diego Llorente','Diego Llorente','DEF',63),(313,64003,'Pascal Struijk','P. Struijk','DEF',63),(314,50739,'Brenden Aaronson','B. Aaronson','MID',63),(315,1150,'Tyler Adams','T. Adams','MID',63),(316,19127,'Adam Forshaw','A. Forshaw','MID',63),(317,328089,'Archie Gray','A. Gray','MID',63),(318,282124,'Darko Gyabi','D. Gyabi','MID',63),(319,19128,'Jack Harrison','J. Harrison','MID',63),(320,3008,'Mateusz Klich','M. Klich','MID',63),(321,935,'Rodrigo Moreno','Rodrigo Moreno Machado','MID',63),(322,129700,'Alfie McCalmont','A. McCalmont','MID',63),(323,47341,'Marc Roca','Marc Roca','MID',63),(324,37161,'Luis Sinisterra','Luis Fernando Sinisterra Lucumí','MID',63),(325,37724,'Crysencio Summerville','C. Summerville','MID',63),(326,19134,'Patrick Bamford','P. Bamford','FWD',63),(327,19569,'Joe Gelhardt','J. Gelhardt','FWD',63),(328,162128,'Wilfried Gnonto','W. Gnonto','FWD',63),(329,153400,'Sam Greenwood','S. Greenwood','FWD',63),(330,313059,'Mateo Joseph','Mateo Joseph','FWD',63),(331,284408,'Sonny Perkins','S. Perkins','FWD',63),(332,17736,'Daniel Iversen','D. Iversen','GKP',46),(333,18985,'Alex Smithies','A. Smithies','GKP',46),(334,18146,'Danny Ward','D. Ward','GKP',46),(335,3421,'Daniel Amartey','D. Amartey','DEF',46),(336,18936,'Ryan Bertrand','R. Bertrand','DEF',46),(337,138929,'Lewis Brunt','L. Brunt','DEF',46),(338,2920,'Timothy Castagne','T. Castagne','DEF',46),(339,18772,'Jonny Evans','J. Evans','DEF',46),(340,8694,'Wout Faes','W. Faes','DEF',46),(341,19760,'James Justin','J. Justin','DEF',46),(342,18771,'Ricardo Pereira','Ricardo Pereira','DEF',46),(343,18776,'Çaglar Söyüncü','Ç. Söyüncü','DEF',46),(344,152969,'Luke Thomas','L. Thomas','DEF',46),(345,18943,'Jannik Vestergaard','J. Vestergaard','DEF',46),(346,284396,'Joe Wormleighton','J. Wormleighton','DEF',46),(347,18777,'Marc Albrighton','M. Albrighton','MID',46),(348,18778,'Harvey Barnes','H. Barnes','MID',46),(349,289624,'Sammy Braybrooke','S. Braybrooke','MID',46),(350,148099,'Kiernan Dewsbury-Hall','K. Dewsbury-Hall','MID',46),(351,18784,'James Maddison','J. Maddison','MID',46),(352,18785,'Nampalys Mendy','N. Mendy','MID',46),(353,283290,'Kasey McAteer','K. McAteer','MID',46),(354,18786,'Wilfred Ndidi','W. Ndidi','MID',46),(355,18906,'Ayoze Pérez','Ayoze Pérez Gutiérrez','MID',46),(356,2925,'Dennis Praet','D. Praet','MID',46),(357,22233,'Boubakary Soumaré','B. Soumaré','MID',46),(358,2926,'Youri Tielemans','Y. Tielemans','MID',46),(359,1098,'Patson Daka','Patson Daka','FWD',46),(360,2778,'Kelechi Iheanacho','Kelechi Promise ?heanach?','FWD',46),(361,18788,'Jamie Vardy','Jamie Richard Vardy','FWD',46),(362,17736,'Daniel Iversen','D. Iversen','GKP',40),(363,18985,'Alex Smithies','A. Smithies','GKP',40),(364,18146,'Danny Ward','D. Ward','GKP',40),(365,3421,'Daniel Amartey','D. Amartey','DEF',40),(366,18936,'Ryan Bertrand','R. Bertrand','DEF',40),(367,138929,'Lewis Brunt','L. Brunt','DEF',40),(368,2920,'Timothy Castagne','T. Castagne','DEF',40),(369,18772,'Jonny Evans','J. Evans','DEF',40),(370,8694,'Wout Faes','W. Faes','DEF',40),(371,19760,'James Justin','J. Justin','DEF',40),(372,18771,'Ricardo Pereira','Ricardo Pereira','DEF',40),(373,18776,'Çaglar Söyüncü','Ç. Söyüncü','DEF',40),(374,152969,'Luke Thomas','L. Thomas','DEF',40),(375,18943,'Jannik Vestergaard','J. Vestergaard','DEF',40),(376,284396,'Joe Wormleighton','J. Wormleighton','DEF',40),(377,18777,'Marc Albrighton','M. Albrighton','MID',40),(378,18778,'Harvey Barnes','H. Barnes','MID',40),(379,289624,'Sammy Braybrooke','S. Braybrooke','MID',40),(380,148099,'Kiernan Dewsbury-Hall','K. Dewsbury-Hall','MID',40),(381,18784,'James Maddison','J. Maddison','MID',40),(382,18785,'Nampalys Mendy','N. Mendy','MID',40),(383,283290,'Kasey McAteer','K. McAteer','MID',40),(384,18786,'Wilfred Ndidi','W. Ndidi','MID',40),(385,18906,'Ayoze Pérez','Ayoze Pérez Gutiérrez','MID',40),(386,2925,'Dennis Praet','D. Praet','MID',40),(387,22233,'Boubakary Soumaré','B. Soumaré','MID',40),(388,2926,'Youri Tielemans','Y. Tielemans','MID',40),(389,1098,'Patson Daka','Patson Daka','FWD',40),(390,2778,'Kelechi Iheanacho','Kelechi Promise ?heanach?','FWD',40),(391,18788,'Jamie Vardy','Jamie Richard Vardy','FWD',40),(392,19197,'Scott Carson','S. Carson','GKP',50),(393,617,'Ederson','Ederson','GKP',50),(394,25004,'Stefan Ortega','S. Ortega','GKP',50),(395,5,'Manuel Akanji','M. Akanji','DEF',50),(396,18861,'Nathan Aké','N. Aké','DEF',50),(397,855,'João Cancelo','João Cancelo','DEF',50),(398,567,'Rúben Dias','Rúben Dias','DEF',50),(399,23,'Sergio Gómez','Sergio Gómez','DEF',50),(400,622,'Aymeric Laporte','Aymeric Laporte','DEF',50),(401,284230,'Rico Lewis','R. Lewis','DEF',50),(402,626,'John Stones','J. Stones','DEF',50),(403,627,'Kyle Walker','K. Walker','DEF',50),(404,278128,'Josh Wilson-Esbrand','J. Wilson-Esbrand','DEF',50),(405,278133,'Oscar Bobb','O. Bobb','MID',50),(406,629,'Kevin De Bruyne','K. De Bruyne','MID',50),(407,631,'Phil Foden','P. Foden','MID',50),(408,19187,'Jack Grealish','J. Grealish','MID',50),(409,632,'Claudio Gomes','C. Gomes','MID',50),(410,633,'Ilkay Gündogan','?. Gündo?an','MID',50),(411,144733,'Ben Knight','B. Knight','MID',50),(412,44,'Rodri','Rodri','MID',50),(413,635,'Riyad Mahrez','Riyad Karim Mahrez','MID',50),(414,152982,'Cole Palmer','C. Palmer','MID',50),(415,19130,'Kalvin Phillips','K. Phillips','MID',50),(416,636,'Bernardo Silva','Bernardo Silva','MID',50),(417,6009,'Julián Álvarez','Julián Álvarez','FWD',50),(418,1100,'Erling Haaland','Erling Braut Haaland','FWD',50),(419,18885,'Karl Darlow','K. Darlow','GKP',34),(420,18886,'Martin Dubravka','M. Dúbravka','GKP',34),(421,44912,'Mark Gillespie','M. Gillespie','GKP',34),(422,1972,'Loris Karius','L. Karius','GKP',34),(423,18911,'Nick Pope','N. Pope','GKP',34),(424,38734,'Sven Botman','S. Botman','DEF',34),(425,18961,'Dan Burn','D. Burn','DEF',34),(426,18892,'Paul Dummett','P. Dummett','DEF',34),(427,2855,'Emil Krafth','E. Krafth','DEF',34),(428,18894,'Jamaal Lascelles','J. Lascelles','DEF',34),(429,19076,'Jamal Lewis','J. Lewis','DEF',34),(430,18896,'Javier Manquillo','Javi Manquillo','DEF',34),(431,18903,'Matt Ritchie','M. Ritchie','DEF',34),(432,2806,'Fabian Schär','F. Schär','DEF',34),(433,18941,'Matt Targett','M. Targett','DEF',34),(434,169,'Kieran Trippier','K. Trippier','DEF',34),(435,68127,'Kelland Watts','K. Watts','DEF',34),(436,2507,'Miguel Almirón','M. Almirón','MID',34),(437,138908,'Elliot Anderson','E. Anderson','MID',34),(438,18873,'Ryan Fraser','R. Fraser','MID',34),(439,10135,'Bruno Guimarães','Bruno Guimarães','MID',34),(440,723,'Joelinton','Joelinton Cassio Apolinário de Lira','MID',34),(441,349987,'Garang Kuol','G. Kuol','MID',34),(442,18901,'Sean Longstaff','S. Longstaff','MID',34),(443,19163,'Jacob Murphy','J. Murphy','MID',34),(444,22173,'Allan Saint-Maximin','Allan Irénée Saint-Maximin','MID',34),(445,18904,'Jonjo Shelvey','J. Shelvey','MID',34),(446,1463,'Joe Willock','J. Willock','MID',34),(447,2864,'Alexander Isak','Alexander Isak','FWD',34),(448,2939,'Callum Wilson','Callum Eddie Graham Wilson','FWD',34),(449,18931,'Chris Wood','Christopher Grant Wood','FWD',34),(450,19088,'Dean Henderson','D. Henderson','GKP',65),(451,18836,'Wayne Hennessey','W. Hennessey','GKP',65),(452,17448,'Jordan Smith','J. Smith','GKP',65),(453,163,'Serge Aurier','S. Aurier','DEF',65),(454,329357,'Zach Abbott','Zach Abbott','DEF',65),(455,174918,'Loïc Badé','L. Badé','DEF',65),(456,84081,'Giulian Biancone','G. Biancone','DEF',65),(457,18739,'Willy Boly','W. Boly','DEF',65),(458,18863,'Steve Cook','S. Cook','DEF',65),(459,327606,'Aaron Donnelly','Aaron Donnelly','DEF',65),(460,10122,'Renan Lodi','Renan Lodi','DEF',65),(461,279,'Loïc Mbe Soh','L. Mbe Soh','DEF',65),(462,44811,'Scott McKenna','S. McKenna','DEF',65),(463,25916,'Moussa Niakhaté','M. Niakhaté','DEF',65),(464,19610,'Omar Richards','O. Richards','DEF',65),(465,17365,'Harry Toffolo','H. Toffolo','DEF',65),(466,138780,'Neco Williams','N. Williams','DEF',65),(467,1746,'Joe Worrall','J. Worrall','DEF',65),(468,18996,'Harry Arter','H. Arter','MID',65),(469,40401,'Cafu','Cafú','MID',65),(470,19299,'Jack Colback','J. Colback','MID',65),(471,284316,'Billy Fewster','Billy Charles Storm Fewster','MID',65),(472,2807,'Remo Freuler','R. Freuler','MID',65),(473,18746,'Morgan Gibbs-White','M. Gibbs-White','MID',65),(474,327603,'Alex Gibson-Hammond','Alex Gibson-Hammond','MID',65),(475,325967,'Oliver Hammond','O. Hammond','MID',65),(476,2991,'Cheikhou Kouyaté','C. Kouyaté','MID',65),(477,900,'Jesse Lingard','J. Lingard','MID',65),(478,24882,'Orel Mangala','O. Mangala','MID',65),(479,129712,'Alex Mighten','Alexander Cole Mighten','MID',65),(480,20503,'Lewis O\'Brien','L. O\'Brien','MID',65),(481,9926,'Gustavo Scarpa','Gustavo Scarpa','MID',65),(482,19305,'Ryan Yates','R. Yates','MID',65),(483,8598,'Taiwo Awoniyi','Taiwo Micheal Awoniyi','FWD',65),(484,80,'Emmanuel Dennis','Emmanuel Bonaventure Dennis','FWD',65),(485,129711,'Brennan Johnson','B. Johnson','FWD',65),(486,18884,'Sam Surridge','Samuel William Surridge','FWD',65),(487,339138,'Dale Taylor','Dale Taylor','FWD',65),(488,19842,'Lyle Taylor','Lyle James Alfred Taylor','FWD',65),(489,105971,'Gavin Bazunu','G. Bazunu','GKP',41),(490,2275,'Willy Caballero','W. Caballero','GKP',41),(491,18935,'Alex McCarthy','A. McCarthy','GKP',41),(492,25061,'Armel Bella-Kotchap','A. Bella-Kotchap','DEF',41),(493,1902,'Duje Caleta-Car','D. Caleta-Car','DEF',41),(494,284264,'Juan Larios','Juan Larios','DEF',41),(495,158694,'Tino Livramento','V. Livramento','DEF',41),(496,30476,'Lyanco','Lyanco','DEF',41),(497,20600,'Romain Perraud','R. Perraud','DEF',41),(498,47480,'Mohammed Salisu','M. Salisu','DEF',41),(499,171,'Kyle Walker-Peters','K. Walker-Peters','DEF',41),(500,19825,'Joe Aribo','J. Aribo','MID',41),(501,18945,'Stuart Armstrong','S. Armstrong','MID',41),(502,20557,'Ibrahima Diallo','I. Diallo','MID',41),(503,2114,'Moussa Djenepo','M. Djenepo','MID',41),(504,278085,'Samuel Edozie','S. Edozie','MID',41),(505,284424,'Diamond Edwards','D. Edwards','MID',41),(506,18946,'Mohamed Elyounoussi','M. Elyounoussi','MID',41),(507,284423,'Ryan Finnigan','R. Finnigan','MID',41),(508,282125,'Roméo Lavia','R. Lavia','MID',41),(509,1456,'Ainsley Maitland-Niles','A. Maitland-Niles','MID',41),(510,284427,'Lewis Payne','L. Payne','MID',41),(511,18769,'Theo Walcott','Theo James Walcott','MID',41),(512,2938,'James Ward-Prowse','J. Ward-Prowse','MID',41),(513,19524,'Che Adams','Ché Zach Everton Fred Adams','FWD',41),(514,19484,'Adam Armstrong','Adam James Armstrong','FWD',41),(515,303460,'Dominic Ballard','D. Ballard','FWD',41),(516,190686,'Sékou Mara','Sékou Mara','FWD',41),(517,156428,'Brandon Austin','B. Austin','GKP',47),(518,18932,'Fraser Forster','F. Forster','GKP',47),(519,159,'Hugo Lloris','H. Lloris','GKP',47),(520,164,'Ben Davies','B. Davies','DEF',47),(521,175,'Eric Dier','E. Dier','DEF',47),(522,18742,'Matt Doherty','M. Doherty','DEF',47),(523,154800,'Malachi Walcott','M. Fagan-Walcott','DEF',47),(524,133,'Clément Lenglet','C. Lenglet','DEF',47),(525,30776,'Cristian Romero','C. Romero','DEF',47),(526,1566,'Emerson Royal','Emerson','DEF',47),(527,162607,'Marqes Muir','M. Muir','DEF',47),(528,60353,'Maksim Paskotsi','M. Paskotsi','DEF',47),(529,207,'Ivan Periši?','I. Periši?','DEF',47),(530,168,'Davinson Sánchez','D. Sánchez','DEF',47),(531,331009,'Charlie Sayers','C. Sayers','DEF',47),(532,19032,'Ryan Sessegnon','R. Sessegnon','DEF',47),(533,19235,'Djed Spence','D. Spence','DEF',47),(534,149550,'Japhet Tanganga','J. Tanganga','DEF',47),(535,863,'Rodrigo Bentancur','R. Bentancur','MID',47),(536,18968,'Yves Bissouma','Y. Bissouma','MID',47),(537,273757,'Alfie Devine','A. Devine','MID',47),(538,2061,'Bryan Gil','Bryan Gil Salvatierra','MID',47),(539,2735,'Pierre-Emile Højbjerg','P. Højbjerg','MID',47),(540,30435,'Dejan Kulusevski','D. Kulusevski','MID',47),(541,178,'Lucas Moura','Lucas Moura','MID',47),(542,284414,'Romaine Mundle','R. Mundle','MID',47),(543,284415,'Yago Santiago','Yago Santiago','MID',47),(544,237129,'Pape Matar Sarr','P. Sarr','MID',47),(545,180,'Oliver Skipp','O. Skipp','MID',47),(546,186,'Heung-min Son','Son Heung-Min','MID',47),(547,138793,'Harvey White','H. White','MID',47),(548,184,'Harry Kane','Harry Edward Kane','FWD',47),(549,2413,'Richarlison','Richarlison de Andrade','FWD',47),(550,253,'Alphonse Areola','A. Aréola','GKP',48),(551,2997,'Lukasz Fabianski','?. Fabia?ski','GKP',48),(552,144723,'Krisztián Hegyi','K. Hegyi','GKP',48),(553,19229,'Darren Randolph','D. Randolph','GKP',48),(554,21694,'Nayef Aguerd','N. Aguerd','DEF',48),(555,171058,'Harrison Ashby','H. Ashby','DEF',48),(556,171059,'Jamal Baptiste','J. Baptiste','DEF',48),(557,1231,'Vladimir Coufal','V. Coufal','DEF',48),(558,18813,'Aaron Cresswell','A. Cresswell','DEF',48),(559,19147,'Craig Dawson','C. Dawson','DEF',48),(560,18823,'Ben Johnson','B. Johnson','DEF',48),(561,261,'Thilo Kehrer','T. Kehrer','DEF',48),(562,288279,'Luizão','Luizão','DEF',48),(563,18817,'Angelo Ogbonna','A. Ogbonna','DEF',48),(564,2284,'Emerson Palmieri','Emerson','DEF',48),(565,2726,'Kurt Zouma','K. Zouma','DEF',48),(566,144720,'Keenan Appiah-Forson','K. Appiah-Forson','MID',48),(567,19428,'Jarrod Bowen','Jarrod Bowen','MID',48),(568,19361,'Saïd Benrahma','Mohamed Saïd Benrahma','MID',48),(569,665,'Maxwel Cornet','Gnaly Albert Maxwel Cornet','MID',48),(570,18820,'Conor Coventry','C. Coventry','MID',48),(571,19733,'Flynn Downes','F. Downes','MID',48),(572,278232,'Pierre Ekwah','P. Ekwah','MID',48),(573,1697,'Pablo Fornals','Pablo Fornals','MID',48),(574,2473,'Manuel Lanzini','M. Lanzini','MID',48),(575,1646,'Lucas Paquetá','Lucas Paquetá','MID',48),(576,284446,'Freddie Potts','F. Potts','MID',48),(577,2937,'Declan Rice','D. Rice','MID',48),(578,1243,'Tomas Soucek','T. Sou?ek','MID',48),(579,144725,'Kamarai Swyer','K. Simon-Swyer','MID',48),(580,18819,'Michail Antonio','Michail Gregory Antonio','FWD',48),(581,284409,'Divin Mubama','D. Mubama','FWD',48),(582,30544,'Gianluca Scamacca','Gianluca Scamacca','FWD',48),(583,144741,'Louie Moulden','Louie Moulden','GKP',39),(584,1590,'José Sá','José Sá','GKP',39),(585,19173,'Matija Šarki?','M. Šarki?','GKP',39),(586,280689,'Jackson Smith','J. Smith','GKP',39),(587,21138,'Rayan Aït-Nouri','R. Aït Nouri','DEF',39),(588,280687,'Hugo Bueno','Hugo Bueno','DEF',39),(589,19495,'Nathan Collins','N. Collins','DEF',39),(590,18740,'Jonny Otto','Jonny Castro','DEF',39),(591,18744,'Max Kilman','M. Kilman','DEF',39),(592,284237,'Dexter Lembikisa','D. Lembikisa','DEF',39),(593,195717,'Yerson Mosquera','Y. Mosquera','DEF',39),(594,130,'Nélson Semedo','Nélson Semedo','DEF',39),(595,41606,'Toti Gomes','Toti','DEF',39),(596,158432,'Chem Campbell','C. Campbell','MID',39),(597,195962,'Chiquinho','Francisco Jorge Tavares Oliveira','MID',39),(598,284262,'Harvey Griffiths','H. Griffiths','MID',39),(599,925,'Gonçalo Guedes','Gonçalo Manuel Ganchinho Guedes','MID',39),(600,204033,'Joseph Hodge','J. Hodge','MID',39),(601,24888,'Hee-chan Hwang','Hwang Hee-Chan','MID',39),(602,2677,'João Moutinho','João Moutinho','MID',39),(603,1864,'Pedro Neto','Pedro Lomba Neto','MID',39),(604,2676,'Rúben Neves','Rúben Neves','MID',39),(605,41621,'Matheus Nunes','Matheus Nunes','MID',39),(606,1605,'Daniel Podence','Daniel Podence','MID',39),(607,61178,'Connor Ronan','C. Ronan','MID',39),(608,18753,'Adama Traoré','Adama Traoré Diarra','MID',39),(609,19307,'Léo Bonatini','Leonardo Bonatini Lohner Maia','FWD',39),(610,54,'Diego Costa','Diego Costa','FWD',39),(611,1165,'Matheus Cunha','Matheus Cunha','FWD',39),(612,303019,'Nathan Fraser','N. Fraser','FWD',39),(613,2887,'Raúl Jiménez','Raúl Alonso Jiménez Rodríguez','FWD',39),(614,7722,'Sasa Kalajdzic','S. Kalajdzic','FWD',39);
-/*!40000 ALTER TABLE `players` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Dumping routines for database 'ffxg'
---
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2023-02-15 23:42:43
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (1,20355,'Aaron Ramsdale','A. Ramsdale','GKP',42),
+	 (2,50999,'Matt Turner','M. Turner','GKP',42),
+	 (3,169295,'Karl Hein','K. Hein','GKP',42),
+	 (4,138843,'James Hillson','J. Hillson','GKP',42),
+	 (5,1440,'Rob Holding','R. Holding','DEF',42),
+	 (6,22224,'Gabriel Magalhães','Gabriel Magalhães','DEF',42),
+	 (7,22090,'William Saliba','W. Saliba','DEF',42),
+	 (8,190,'Cédric Soares','Cédric Soares','DEF',42),
+	 (9,284439,'Lino Sousa','L. Sousa','DEF',42),
+	 (10,1117,'Kieran Tierney','K. Tierney','DEF',42);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (11,2597,'Takehiro Tomiyasu','T. Tomiyasu','DEF',42),
+	 (12,19959,'Benjamin White','B. White','DEF',42),
+	 (13,641,'Oleksandr Zinchenko','O. Zinchenko','DEF',42),
+	 (14,278075,'C?t?lin Cîrjan','C.Cîrjan','MID',42),
+	 (15,309501,'Amario Cozier-Duberry','A. Cozier-Duberry','MID',42),
+	 (16,1452,'Mohamed Elneny','Mohamed Elneny','MID',42),
+	 (17,311520,'Marquinhos','Marcus Vinícius Oliveira Alencar','MID',42),
+	 (18,127769,'Gabriel Martinelli','Gabriel Teodoro Martinelli Silva','MID',42),
+	 (19,727,'Reiss Nelson','R. Nelson','MID',42),
+	 (20,313236,'Ethan Nwaneri','E. Nwaneri','MID',42);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (21,37127,'Martin Ødegaard','M. Ødegaard','MID',42),
+	 (22,49,'Thomas Partey','T. Partey','MID',42),
+	 (23,1427,'Albert Sambi Lokonga','A. Lokonga','MID',42),
+	 (24,1460,'Bukayo Saka','B. Saka','MID',42),
+	 (25,167658,'Matthew Smith','M. Smith','MID',42),
+	 (26,1161,'Emile Smith Rowe','E. Smith Rowe','MID',42),
+	 (27,41725,'Fábio Vieira','Fábio Vieira','MID',42),
+	 (28,1464,'Granit Xhaka','G. Xhaka','MID',42),
+	 (29,284062,'Khayon Edwards','K. Edwards','FWD',42),
+	 (30,643,'Gabriel Jesus','Gabriel Fernando de Jesus','FWD',42);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (31,1468,'Eddie Nketiah','E. Nketiah','FWD',42),
+	 (32,19599,'Emiliano Martínez','E. Martínez','GKP',66),
+	 (33,766,'Robin Olsen','R. Olsen','GKP',66),
+	 (34,19174,'Jed Steer','J. Steer','GKP',66),
+	 (35,138937,'Filip Marschall','F. Marschall','GKP',66),
+	 (36,2852,'Ludwig Augustinsson','L. Augustinsson','DEF',66),
+	 (37,2999,'Jan Bednarek','J. Bednarek','DEF',66),
+	 (38,284457,'Lamare Bogarde','L. Bogarde','DEF',66),
+	 (39,2724,'Lucas Digne','L. Digne','DEF',66),
+	 (40,21090,'Diego Carlos','Diego Carlos','DEF',66);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (41,19298,'Matthew Cash','M. Cash','DEF',66),
+	 (42,19016,'Calum Chambers','C. Chambers','DEF',66),
+	 (43,312118,'Josh Feeney','J. Feeney','DEF',66),
+	 (44,21636,'Frédéric Guilbert','F. Guilbert','DEF',66),
+	 (45,19354,'Ezri Konsa','E. Konsa','DEF',66),
+	 (46,19179,'Tyrone Mings','T. Mings','DEF',66),
+	 (47,894,'Ashley Young','A. Young','DEF',66),
+	 (48,983,'Leon Bailey','Leon Patrick Bailey Butler','MID',66),
+	 (49,19071,'Emiliano Buendía','E. Buendía','MID',66),
+	 (50,147,'Philippe Coutinho','Philippe Coutinho','MID',66);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (51,2922,'Leander Dendoncker','L. Dendoncker','MID',66),
+	 (52,1904,'Boubacar Kamara','B. Kamara','MID',66),
+	 (53,47522,'Douglas Luiz','Douglas Luiz','MID',66),
+	 (54,19191,'John McGinn','J. McGinn','MID',66),
+	 (55,76,'Marvelous Nakamba','M. Nakamba','MID',66),
+	 (56,19192,'Jacob Ramsey','J. Ramsey','MID',66),
+	 (57,1914,'Morgan Sanson','M. Sanson','MID',66),
+	 (58,312260,'Kadan Young','K. Young','MID',66),
+	 (59,137302,'Cameron Archer','Cameron Desmond Archer','FWD',66),
+	 (60,18955,'Danny Ings','Daniel William John Ings','FWD',66);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (61,19366,'Ollie Watkins','Oliver George Arthur Watkins','FWD',66),
+	 (62,151756,'Will Dennis','W. Dennis','GKP',35),
+	 (63,912,'Norberto Neto','Neto','GKP',35),
+	 (64,382166,'Cameron Plain','C. Plain','GKP',35),
+	 (65,18860,'Mark Travers','M. Travers','GKP',35),
+	 (66,382929,'Chris Francis','Chris Francis','DEF',35),
+	 (67,18815,'Ryan Fredericks','R. Fredericks','DEF',35),
+	 (68,290962,'Ben Greenwood','B. Greenwood','DEF',35),
+	 (69,20093,'James Hill','J. Hill','DEF',35),
+	 (70,19263,'Lloyd Kelly','L. Kelly','DEF',35);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (71,18866,'Chris Mepham','C. Mepham','DEF',35),
+	 (72,6610,'Marcos Senesi','M. Senesi','DEF',35),
+	 (73,18869,'Adam Smith','A. Smith','DEF',35),
+	 (74,19769,'Jack Stacey','J. Stacey','DEF',35),
+	 (75,18940,'Jack Stephens','J. Stephens','DEF',35),
+	 (76,19824,'Jordan Zemura','J. Zemura','DEF',35),
+	 (77,196855,'Jaidon Anthony','Jaidon Anthony','MID',35),
+	 (78,2734,'Philip Billing','P. Billing','MID',35),
+	 (79,18870,'David Brooks','D. Brooks','MID',35),
+	 (80,1125,'Ryan Christie','R. Christie','MID',35);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (81,18872,'Lewis Cook','L. Cook','MID',35),
+	 (82,19964,'Siriki Dembélé','S. Dembélé','MID',35),
+	 (83,2490,'Jefferson Lerma','J. Lerma','MID',35),
+	 (84,19866,'Jamal Lowe','Jamal Akua Lowe','MID',35),
+	 (85,19356,'Emiliano Marcondes','E. Marcondes','MID',35),
+	 (86,382930,'Ferdinand Okoh','Ferdinand Okoh','MID',35),
+	 (87,19454,'Ben Pearson','B. Pearson','MID',35),
+	 (88,19482,'Joe Rothwell','J. Rothwell','MID',35),
+	 (89,334725,'Dominic Sadi','Dominic Sadi','MID',35),
+	 (90,18878,'Junior Stanislas','J. Stanislas','MID',35);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (91,19245,'Marcus Tavernier','M. Tavernier','MID',35),
+	 (92,382167,'Jack Wadham','Jack Wadham','MID',35),
+	 (93,382160,'Daniel Adu-Adjei','D. Adu-Adjei','FWD',35),
+	 (94,19804,'Kieffer Moore','Kieffer Roberto Francisco Moore','FWD',35),
+	 (95,18883,'Dominic Solanke','Dominic Ayodele Solanke-Mitchell','FWD',35),
+	 (96,1835,'Matthew Cox','M. Cox','GKP',55),
+	 (97,19465,'David Raya','David Raya','GKP',55),
+	 (98,278041,'Thomas Strakosha','T. Strakosha','GKP',55),
+	 (99,1119,'Kristoffer Ajer','K. Ajer','DEF',55),
+	 (100,19352,'Sergi Canós','Sergi Canós','DEF',55);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (101,191337,'Tristan Crama','T. Crama','DEF',55),
+	 (102,17772,'Charlie Goode','C. Goode','DEF',55),
+	 (103,19346,'Rico Henry','R. Henry','DEF',55),
+	 (104,44871,'Aaron Hickey','A. Hickey','DEF',55),
+	 (105,19124,'Pontus Jansson','P. Jansson','DEF',55),
+	 (106,18917,'Ben Mee','B. Mee','DEF',55),
+	 (107,19789,'Ethan Pinnock','E. Pinnock','DEF',55),
+	 (108,15745,'Mads Roerslev Rasmussen','M. Rasmussen','DEF',55),
+	 (109,2731,'Zanka','Mathias Jattah-Njie Jørgensen','DEF',55),
+	 (110,20110,'Shandon Baptiste','S. Baptiste','MID',55);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (111,15908,'Mikkel Damsgaard','M. Damsgaard','MID',55),
+	 (112,19362,'Josh Dasilva','Pelenda Joshua Tunga Dasilva','MID',55),
+	 (113,2699,'Saman Ghoddos','Saman Ghoddos','MID',55),
+	 (114,25073,'Vitaly Janelt','V. Janelt','MID',55),
+	 (115,47438,'Mathias Jensen','M. Jensen','MID',55),
+	 (116,106725,'Keane Lewis-Potter','Keane William Lewis-Potter','MID',55),
+	 (117,30407,'Christian Nørgaard','C. Nørgaard','MID',55),
+	 (118,15799,'Frank Onyeka','F. Onyeka','MID',55),
+	 (119,382925,'Ryan Trevitt','R. Trevitt','MID',55),
+	 (120,263538,'Yegor Yarmolyuk','E. Yarmolyuk','MID',55);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (121,20649,'Yoane Wissa','Yoane Wissa','MID',55),
+	 (122,215873,'Alexander Gilbert','A. Gilbert','FWD',55),
+	 (123,20589,'Bryan Mbeumo','Bryan Mbeumo','FWD',55),
+	 (124,19974,'Ivan Toney','Ivan Toney','FWD',55),
+	 (125,167663,'Tom McGill','T. McGill','GKP',51),
+	 (126,18959,'Robert Sánchez','Robert Sánchez','GKP',51),
+	 (127,18960,'Jason Steele','J. Steele','GKP',51),
+	 (128,152953,'Levi Colwill','L. Colwill','DEF',51),
+	 (129,18963,'Lewis Dunk','L. Dunk','DEF',51),
+	 (130,46731,'Pervis Estupiñán','P. Estupiñán','DEF',51);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (131,69257,'James Furlong','J. Furlong','DEF',51),
+	 (132,138815,'Tariq Lamptey','T. Lamptey','DEF',51),
+	 (133,282254,'Odeluga Offiah','O. Offiah','DEF',51),
+	 (134,138874,'Antef Tsoungui','A. Tsoungui','DEF',51),
+	 (135,280672,'Ed Turns','E. Turns','DEF',51),
+	 (136,38695,'Jan Paul van Hecke','J. van Hecke','DEF',51),
+	 (137,537,'Joël Veltman','J. Veltman','DEF',51),
+	 (138,19265,'Adam Webster','A. Webster','DEF',51),
+	 (139,17715,'Steven Alzate','S. Alzate','MID',51),
+	 (140,311334,'Facundo Buonanotte','F. Buonanotte','MID',51);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (141,116117,'Moisés Caicedo','M. Caicedo','MID',51),
+	 (142,130423,'Billy Gilmour','B. Gilmour','MID',51),
+	 (143,18970,'Pascal Groß','P. Groß','MID',51),
+	 (144,296121,'Jack Hinchy','J. Hinchy','MID',51),
+	 (145,305730,'Jack Hinshelwood','J. Hinshelwood','MID',51),
+	 (146,295,'Adam Lallana','A. Lallana','MID',51),
+	 (147,6716,'Alexis Mac Allister','A. Mac Allister','MID',51),
+	 (148,18973,'Solomon March','S. March','MID',51),
+	 (149,106835,'Kaoru Mitoma','K. Mitoma','MID',51),
+	 (150,40911,'Jakub Moder','J. Moder','MID',51);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (151,137220,'Andy Moran','A. Moran','MID',51),
+	 (152,1093,'Enock Mwepu','E. Mwepu','MID',51),
+	 (153,216809,'Cameron Peupion','C. Peupion','MID',51),
+	 (154,202086,'Jeremy Sarmiento','J. Sarmiento','MID',51),
+	 (155,138881,'Jack Spong','J. Spong','MID',51),
+	 (156,1946,'Leandro Trossard','Leandro Trossard','MID',51),
+	 (157,70747,'Julio Enciso','J. Enciso','FWD',51),
+	 (158,129643,'Evan Ferguson','E. Ferguson','FWD',51),
+	 (159,26475,'Deniz Undav','Deniz Undav','FWD',51),
+	 (160,1469,'Danny Welbeck','Daniel Nii Tackie Mensah Welbeck','FWD',51);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (161,303667,'Eddie Beach','E. Beach','GKP',49),
+	 (162,19012,'Marcus Bettinelli','M. Bettinelli','GKP',49),
+	 (163,2986,'Edouard Mendy','É. Mendy','GKP',49),
+	 (164,2273,'Kepa Arrizabalaga','Kepa','GKP',49),
+	 (165,2280,'César Azpilicueta','Azpilicueta','DEF',49),
+	 (166,181796,'Josh Brooking','J. Brooking','DEF',49),
+	 (167,19720,'Trevoh Chalobah','T. Chalobah','DEF',49),
+	 (168,2933,'Benjamin Chilwell','B. Chilwell','DEF',49),
+	 (169,47380,'Marc Cucurella','Marc Cucurella','DEF',49),
+	 (170,22094,'Wesley Fofana','W. Fofana','DEF',49);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (171,284406,'Alfie Gilchrist','A. Gilchrist','DEF',49),
+	 (172,181797,'Bashir Humphreys','B. Humphreys','DEF',49),
+	 (173,19545,'Reece James','R. James','DEF',49),
+	 (174,318,'Kalidou Koulibaly','K. Koulibaly','DEF',49),
+	 (175,259,'Thiago Silva','Thiago Silva','DEF',49),
+	 (176,270507,'Cesare Casadei','C. Casadei','MID',49),
+	 (177,138935,'Carney Chukwuemeka','C. Chukwuemeka','MID',49),
+	 (178,284405,'Ben Elliott','B. Elliott','MID',49),
+	 (179,67972,'Conor Gallagher','C. Gallagher','MID',49),
+	 (180,284492,'Lewis Hall','L. Hall','MID',49);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (181,284428,'Omari Hutchinson','O. Giraud-Hutchinson','MID',49),
+	 (182,2289,'Jorginho','Jorginho','MID',49),
+	 (183,2291,'Mateo Kovacic','M. Kova?i?','MID',49),
+	 (184,2290,'N''Golo Kanté','N. Kanté','MID',49),
+	 (185,2292,'Ruben Loftus-Cheek','R. Loftus-Cheek','MID',49),
+	 (186,19220,'Mason Mount','M. Mount','MID',49),
+	 (187,17,'Christian Pulisic','C. Pulisic','MID',49),
+	 (188,162114,'Dion Rankine','D. Rankine','MID',49),
+	 (189,645,'Raheem Sterling','Raheem Shaquille Sterling','MID',49),
+	 (190,284442,'Charlie Webster','C. Webster','MID',49);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (191,2810,'Denis Zakaria','D. Zakaria','MID',49),
+	 (192,548,'Hakim Ziyech','H. Ziyech','MID',49),
+	 (193,1465,'Pierre-Emerick Aubameyang','P. Aubameyang','FWD',49),
+	 (194,138822,'Armando Broja','Armando Broja','FWD',49),
+	 (195,331563,'Mason Burstow','M. Burstow','FWD',49),
+	 (196,291476,'David Datro Fofana','D. Fofana','FWD',49),
+	 (197,978,'Kai Havertz','K. Havertz','FWD',49),
+	 (198,284459,'Malik Mothersille','M. Mothersille','FWD',49),
+	 (199,284554,'Owen Goodman','O.Goodman','GKP',52),
+	 (200,18835,'Vicente Guaita','Guaita','GKP',52);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (201,19143,'Sam Johnstone','S. Johnstone','GKP',52),
+	 (202,284549,'Joseph Whitworth','J. Whitworth','GKP',52),
+	 (203,2729,'Joachim Andersen','J. Andersen','DEF',52),
+	 (204,106086,'Kofi Balmer','K. Balmer','DEF',52),
+	 (205,18862,'Nathaniel Clyne','N. Clyne','DEF',52),
+	 (206,127605,'Nathan Ferguson','N. Ferguson','DEF',52),
+	 (207,67971,'Marc Guéhi','M. Guéhi','DEF',52),
+	 (208,182201,'Tyrick Mitchell','T. Mitchell','DEF',52),
+	 (209,126949,'Chris Richards','C. Richards','DEF',52),
+	 (210,18844,'James Tomkins','J. Tomkins','DEF',52);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (211,18847,'Joel Ward','J. Ward','DEF',52),
+	 (212,3428,'Jordan Ayew','Jordan Pierre Ayew','MID',52),
+	 (213,3339,'Cheick Doucouré','C. Doucouré','MID',52),
+	 (214,328808,'Malcolm Ebiowei','M. Ebiowei','MID',52),
+	 (215,19586,'Eberechi Eze','E. Eze','MID',52),
+	 (216,18806,'Will Hughes','W. Hughes','MID',52),
+	 (217,18849,'James McArthur','J. McArthur','MID',52),
+	 (218,18852,'Luka Milivojevic','L. Milivojevi?','MID',52),
+	 (219,19617,'Michael Olise','M. Olise','MID',52),
+	 (220,304320,'David Ozoh','D. Ozoh','MID',52);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (221,270357,'Killian Phillips','K. Phillips','MID',52),
+	 (222,18853,'Jairo Riedewald','J. Riedewald','MID',52),
+	 (223,301295,'Kaden Rodney','K. Rodney','MID',52),
+	 (224,18843,'Jeffrey Schlupp','J. Schlupp','MID',52),
+	 (225,284551,'Jack Wells-Morrison','J. Wells-Morrison','MID',52),
+	 (226,3247,'Wilfried Zaha','Dazet Wilfried Armel Zaha','MID',52),
+	 (227,1135,'Odsonne Edouard','Odsonne Édouard','FWD',52),
+	 (228,266203,'John-Kymani Gordon','J. Gordon','FWD',52),
+	 (229,25927,'Jean-Philippe Mateta','Jean-Philippe Mateta','FWD',52),
+	 (230,18858,'Asmir Begovi?','A. Begovi?','GKP',45);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (231,20069,'William Crellin','B. Crellin','GKP',45),
+	 (232,18770,'Eldin Jakupovi?','E. Jakupovic','GKP',45),
+	 (233,20224,'Andy Lonergan','A. Lonergan','GKP',45),
+	 (234,2932,'Jordan Pickford','J. Pickford','GKP',45),
+	 (235,138853,'Joseph Anderson','J. Anderson','DEF',45),
+	 (236,18741,'Conor Coady','C. Coady','DEF',45),
+	 (237,18758,'Seamus Coleman','S. Coleman','DEF',45),
+	 (238,19073,'Ben Godfrey','B. Godfrey','DEF',45),
+	 (239,19150,'Mason Holgate','M. Holgate','DEF',45),
+	 (240,138849,'Kyle John','K. John','DEF',45);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (241,2934,'Michael Keane','M. Keane','DEF',45),
+	 (242,2484,'Yerry Mina','Y. Mina','DEF',45),
+	 (243,2165,'Vitalii Mykolenko','V. Mykolenko','DEF',45),
+	 (244,138417,'Nathan Patterson','N. Patterson','DEF',45),
+	 (245,2936,'James Tarkowski','J. Tarkowski','DEF',45),
+	 (246,18745,'Rúben Vinagre','Rúben Vinagre','DEF',45),
+	 (247,284327,'Reece Welch','R. Welch','DEF',45),
+	 (248,326,'Allan','Allan','MID',45),
+	 (249,18762,'Tom Davies','T. Davies','MID',45),
+	 (250,18805,'Abdoulaye Doucouré','A. Doucouré','MID',45);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (251,895,'James Garner','J. Garner','MID',45),
+	 (252,138787,'Anthony Gordon','Anthony Michael Gordon','MID',45),
+	 (253,18781,'Demarai Gray','D. Gray','MID',45),
+	 (254,2990,'Idrissa Gueye','I. Gueye','MID',45),
+	 (255,1455,'Alex Iwobi','Alexander Chuka Iwobi','MID',45),
+	 (256,18929,'Dwight McNeil','Dwight James Matthew McNeil','MID',45),
+	 (257,284187,'Stanley Mills','S. Mills','MID',45),
+	 (258,162714,'Amadou Onana','A. Onana','MID',45),
+	 (259,284267,'Isaac Price','I. Price','MID',45),
+	 (260,18854,'Andros Townsend','A. Townsend','MID',45);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (261,18766,'Dominic Calvert-Lewin','Dominic Nathaniel Calvert-Lewin','FWD',45),
+	 (262,215874,'Thomas Cannon','T. Cannon','FWD',45),
+	 (263,19364,'Neal Maupay','Neal Maupay','FWD',45),
+	 (264,138786,'Ellis Simms','E. Simms','FWD',45),
+	 (265,1438,'Bernd Leno','B. Leno','GKP',36),
+	 (266,19657,'Marek Rodák','M. Rodák','GKP',36),
+	 (267,19145,'Tosin Adarabioyo','T. Adarabioyo','DEF',36),
+	 (268,288121,'Luciano D''Auria-Henry','L. D''Auria-Henry','DEF',36),
+	 (269,18814,'Issa Diop','I. Diop','DEF',36),
+	 (270,18962,'Shane Duffy','S. Duffy','DEF',36);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (271,263,'Layvin Kurzawa','L. Kurzawa','DEF',36),
+	 (272,946,'Kevin Mbabu','K. Mbabu','DEF',36),
+	 (273,153412,'Connor McAvoy','C. McAvoy','DEF',36),
+	 (274,284471,'Stefan Parkes','S. Parkes','DEF',36),
+	 (275,19023,'Tim Ream','T. Ream','DEF',36),
+	 (276,19549,'Antonee Robinson','A. Robinson','DEF',36),
+	 (277,657,'Kenny Tete','K. Tete','DEF',36),
+	 (278,19025,'Tom Cairney','T. Cairney','MID',36),
+	 (279,18751,'Ivan Cavaleiro','Ivan Ricardo Neves Abreu Cavaleiro','MID',36),
+	 (280,18803,'Nathaniel Chalobah','N. Chalobah','MID',36);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (281,19004,'Bobby De Cordova-Reid','Bobby Armani De Cordova-Reid','MID',36),
+	 (282,129707,'Tyrese Francois','T. Francois','MID',36),
+	 (283,359386,'Martial Godo','M. Godo','MID',36),
+	 (284,284475,'Luke Harris','L. Harris','MID',36),
+	 (285,19329,'Daniel James','D. James','MID',36),
+	 (286,19027,'Neeskens Kebano','N. Kebano','MID',36),
+	 (287,18972,'Anthony Knockaert','A. Knockaert','MID',36),
+	 (288,278087,'Ollie O''Neill','O. O''Neill','MID',36),
+	 (289,19393,'Josh Onomah','J. Onomah','MID',36),
+	 (290,278059,'Adrion Pajaziti','A. Pajaziti','MID',36);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (291,41104,'João Palhinha','João Palhinha','MID',36),
+	 (292,899,'Andreas Pereira','Andreas Pereira','MID',36),
+	 (293,19480,'Harrison Reed','H. Reed','MID',36),
+	 (294,335116,'Kristian Šekularac','K. S?ekularac','MID',36),
+	 (295,697,'Manor Solomon','M. Solomon','MID',36),
+	 (296,2294,'Willian','Willian','MID',36),
+	 (297,19221,'Harry Wilson','H. Wilson','MID',36),
+	 (298,174174,'Terry Ablade','T. Ablade','FWD',36),
+	 (299,2825,'Aleksandar Mitrovi?','Aleksandar Mitrovi?','FWD',36),
+	 (300,191971,'Jay Stansfield','J. Stansfield','FWD',36);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (301,104,'Carlos Vinícius','Carlos Vinícius','FWD',36),
+	 (302,278240,'Harry Christy','H. Christy','GKP',63),
+	 (303,39105,'Kristoffer Klaesson','K. Klaesson','GKP',63),
+	 (304,20619,'Illan Meslier','I. Meslier','GKP',63),
+	 (305,1558,'Joel Robles','Joel Robles','GKP',63),
+	 (306,19116,'Luke Ayling','L. Ayling','DEF',63),
+	 (307,19118,'Liam Cooper','L. Cooper','DEF',63),
+	 (308,19126,'Stuart Dallas','S. Dallas','DEF',63),
+	 (309,153411,'Cody Drameh','C. Drameh','DEF',63),
+	 (310,1564,'Junior Firpo','Junior Firpo','DEF',63);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (311,297187,'Leo Fuhr Hjelde','L. Hjelde','DEF',63),
+	 (312,26238,'Robin Koch','R. Koch','DEF',63),
+	 (313,533,'Rasmus Kristensen','R. Kristensen','DEF',63),
+	 (314,47302,'Diego Llorente','Diego Llorente','DEF',63),
+	 (315,64003,'Pascal Struijk','P. Struijk','DEF',63),
+	 (316,50739,'Brenden Aaronson','B. Aaronson','MID',63),
+	 (317,1150,'Tyler Adams','T. Adams','MID',63),
+	 (318,19127,'Adam Forshaw','A. Forshaw','MID',63),
+	 (319,328089,'Archie Gray','A. Gray','MID',63),
+	 (320,282124,'Darko Gyabi','D. Gyabi','MID',63);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (321,19128,'Jack Harrison','J. Harrison','MID',63),
+	 (322,3008,'Mateusz Klich','M. Klich','MID',63),
+	 (323,935,'Rodrigo Moreno','Rodrigo Moreno Machado','MID',63),
+	 (324,129700,'Alfie McCalmont','A. McCalmont','MID',63),
+	 (325,47341,'Marc Roca','Marc Roca','MID',63),
+	 (326,37161,'Luis Sinisterra','Luis Fernando Sinisterra Lucumí','MID',63),
+	 (327,37724,'Crysencio Summerville','C. Summerville','MID',63),
+	 (328,19134,'Patrick Bamford','P. Bamford','FWD',63),
+	 (329,19569,'Joe Gelhardt','J. Gelhardt','FWD',63),
+	 (330,162128,'Wilfried Gnonto','W. Gnonto','FWD',63);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (331,153400,'Sam Greenwood','S. Greenwood','FWD',63),
+	 (332,313059,'Mateo Joseph','Mateo Joseph','FWD',63),
+	 (333,284408,'Sonny Perkins','S. Perkins','FWD',63),
+	 (334,17736,'Daniel Iversen','D. Iversen','GKP',46),
+	 (335,18985,'Alex Smithies','A. Smithies','GKP',46),
+	 (336,18146,'Danny Ward','D. Ward','GKP',46),
+	 (337,3421,'Daniel Amartey','D. Amartey','DEF',46),
+	 (338,18936,'Ryan Bertrand','R. Bertrand','DEF',46),
+	 (339,138929,'Lewis Brunt','L. Brunt','DEF',46),
+	 (340,2920,'Timothy Castagne','T. Castagne','DEF',46);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (341,18772,'Jonny Evans','J. Evans','DEF',46),
+	 (342,8694,'Wout Faes','W. Faes','DEF',46),
+	 (343,19760,'James Justin','J. Justin','DEF',46),
+	 (344,18771,'Ricardo Pereira','Ricardo Pereira','DEF',46),
+	 (345,18776,'Çaglar Söyüncü','Ç. Söyüncü','DEF',46),
+	 (346,152969,'Luke Thomas','L. Thomas','DEF',46),
+	 (347,18943,'Jannik Vestergaard','J. Vestergaard','DEF',46),
+	 (348,284396,'Joe Wormleighton','J. Wormleighton','DEF',46),
+	 (349,18777,'Marc Albrighton','M. Albrighton','MID',46),
+	 (350,18778,'Harvey Barnes','H. Barnes','MID',46);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (351,289624,'Sammy Braybrooke','S. Braybrooke','MID',46),
+	 (352,148099,'Kiernan Dewsbury-Hall','K. Dewsbury-Hall','MID',46),
+	 (353,18784,'James Maddison','J. Maddison','MID',46),
+	 (354,18785,'Nampalys Mendy','N. Mendy','MID',46),
+	 (355,283290,'Kasey McAteer','K. McAteer','MID',46),
+	 (356,18786,'Wilfred Ndidi','W. Ndidi','MID',46),
+	 (357,18906,'Ayoze Pérez','Ayoze Pérez Gutiérrez','MID',46),
+	 (358,2925,'Dennis Praet','D. Praet','MID',46),
+	 (359,22233,'Boubakary Soumaré','B. Soumaré','MID',46),
+	 (360,2926,'Youri Tielemans','Y. Tielemans','MID',46);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (361,1098,'Patson Daka','Patson Daka','FWD',46),
+	 (362,2778,'Kelechi Iheanacho','Kelechi Promise ?heanach?','FWD',46),
+	 (363,18788,'Jamie Vardy','Jamie Richard Vardy','FWD',46),
+	 (364,18812,'Adrián','Adrián','GKP',40),
+	 (365,280,'Alisson Becker','Alisson','GKP',40),
+	 (366,180316,'Harvey Davies','H. Davies','GKP',40),
+	 (367,281,'Caoimhin Kelleher','C. Kelleher','GKP',40),
+	 (368,283,'Trent Alexander-Arnold','T. Alexander-Arnold','DEF',40),
+	 (369,284366,'Luke Chambers','L. Chambers','DEF',40),
+	 (370,284,'Joe Gomez','J. Gomez','DEF',40);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (371,1145,'Ibrahima Konaté','I. Konaté','DEF',40),
+	 (372,286,'Joel Matip','J. Matip','DEF',40),
+	 (373,127472,'Nathaniel Phillips','N. Phillips','DEF',40),
+	 (374,135525,'Calvin Ramsay','C. Ramsay','DEF',40),
+	 (375,289,'Andrew Robertson','A. Robertson','DEF',40),
+	 (376,1600,'Konstantinos Tsimikas','K. Tsimikas','DEF',40),
+	 (377,290,'Virgil van Dijk','V. van Dijk','DEF',40),
+	 (378,507,'Thiago Alcántara','Thiago Alcântara','MID',40),
+	 (379,150,'Arthur','Arthur','MID',40),
+	 (380,310187,'Stefan Bajcetic','Stefan Baj?eti?','MID',40);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (381,152975,'Jake Cain','J. Cain','MID',40),
+	 (382,153066,'Fábio Carvalho','Fábio Carvalho','MID',40),
+	 (383,334729,'Bobby Clark','B. Clark','MID',40),
+	 (384,2489,'Luis Díaz','Luis Fernando Díaz Marulanda','MID',40),
+	 (385,343576,'Ben Doak','B. Doak','MID',40),
+	 (386,19035,'Harvey Elliott','H. Elliott','MID',40),
+	 (387,299,'Fabinho','Fabinho','MID',40),
+	 (388,247,'Cody Gakpo','C. Gakpo','MID',40),
+	 (389,292,'Jordan Henderson','J. Henderson','MID',40),
+	 (390,293,'Curtis Jones','C. Jones','MID',40);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (391,294,'Naby Keita','N. Keïta','MID',40),
+	 (392,296,'James Milner','J. Milner','MID',40),
+	 (393,297,'Alex Oxlade-Chamberlain','A. Oxlade-Chamberlain','MID',40),
+	 (394,306,'Mohamed Salah','Mohamed Salah Hamed Mahrous Ghaly','MID',40),
+	 (395,302,'Roberto Firmino','Roberto Firmino Barbosa de Oliveira','FWD',40),
+	 (396,2678,'Diogo Jota','Diogo José Teixeira da Silva','FWD',40),
+	 (397,51617,'Darwin Núñez','Darwin Gabriel Núñez Ribeiro','FWD',40),
+	 (398,19197,'Scott Carson','S. Carson','GKP',50),
+	 (399,617,'Ederson','Ederson','GKP',50),
+	 (400,25004,'Stefan Ortega','S. Ortega','GKP',50);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (401,5,'Manuel Akanji','M. Akanji','DEF',50),
+	 (402,18861,'Nathan Aké','N. Aké','DEF',50),
+	 (403,855,'João Cancelo','João Cancelo','DEF',50),
+	 (404,567,'Rúben Dias','Rúben Dias','DEF',50),
+	 (405,23,'Sergio Gómez','Sergio Gómez','DEF',50),
+	 (406,622,'Aymeric Laporte','Aymeric Laporte','DEF',50),
+	 (407,284230,'Rico Lewis','R. Lewis','DEF',50),
+	 (408,626,'John Stones','J. Stones','DEF',50),
+	 (409,627,'Kyle Walker','K. Walker','DEF',50),
+	 (410,278128,'Josh Wilson-Esbrand','J. Wilson-Esbrand','DEF',50);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (411,278133,'Oscar Bobb','O. Bobb','MID',50),
+	 (412,629,'Kevin De Bruyne','K. De Bruyne','MID',50),
+	 (413,631,'Phil Foden','P. Foden','MID',50),
+	 (414,19187,'Jack Grealish','J. Grealish','MID',50),
+	 (415,632,'Claudio Gomes','C. Gomes','MID',50),
+	 (416,633,'Ilkay Gündogan','?. Gündo?an','MID',50),
+	 (417,144733,'Ben Knight','B. Knight','MID',50),
+	 (418,44,'Rodri','Rodri','MID',50),
+	 (419,635,'Riyad Mahrez','Riyad Karim Mahrez','MID',50),
+	 (420,152982,'Cole Palmer','C. Palmer','MID',50);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (421,19130,'Kalvin Phillips','K. Phillips','MID',50),
+	 (422,636,'Bernardo Silva','Bernardo Silva','MID',50),
+	 (423,6009,'Julián Álvarez','Julián Álvarez','FWD',50),
+	 (424,1100,'Erling Haaland','Erling Braut Haaland','FWD',50),
+	 (425,20319,'Nathan Bishop','N. Bishop','GKP',33),
+	 (426,2930,'Jack Butland','J. Butland','GKP',33),
+	 (427,882,'David de Gea','David de Gea','GKP',33),
+	 (428,2931,'Tom Heaton','T. Heaton','GKP',33),
+	 (429,284363,'Rhys Bennett','R. Bennett','DEF',33),
+	 (430,886,'Diogo Dalot','Diogo Dalot','DEF',33);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (431,888,'Phil Jones','P. Jones','DEF',33),
+	 (432,889,'Victor Lindelöf','V. Lindelöf','DEF',33),
+	 (433,2935,'Harry Maguire','H. Maguire','DEF',33),
+	 (434,37145,'Tyrell Malacia','T. Malacia','DEF',33),
+	 (435,2467,'Lisandro Martínez','L. Martínez','DEF',33),
+	 (436,153429,'Teden Mengi','Teden Mambuene Mengi','DEF',33),
+	 (437,891,'Luke Shaw','L. Shaw','DEF',33),
+	 (438,19182,'Axel Tuanzebe','A. Tuanzebe','DEF',33),
+	 (439,742,'Raphaël Varane','R. Varane','DEF',33),
+	 (440,138806,'Brandon Williams','B. Williams','DEF',33);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (441,18846,'Aaron Wan-Bissaka','A. Wan-Bissaka','DEF',33),
+	 (442,9971,'Antony','Antony','MID',33),
+	 (443,747,'Casemiro','Casemiro','MID',33),
+	 (444,157997,'Amad Diallo','Amad Diallo Traoré','MID',33),
+	 (445,153430,'Anthony Elanga','A. Elanga','MID',33),
+	 (446,174,'Christian Eriksen','C. Eriksen','MID',33),
+	 (447,1485,'Bruno Fernandes','Bruno Fernandes','MID',33),
+	 (448,905,'Fred','Fred','MID',33),
+	 (449,284324,'Alejandro Garnacho','Alejandro Garnacho','MID',33),
+	 (450,284295,'Zidane Iqbal','Zidane Iqbal','MID',33);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (451,284322,'Kobbie Mainoo','K. Mainoo','MID',33),
+	 (452,903,'Scott McTominay','S. McTominay','MID',33),
+	 (453,909,'Marcus Rashford','Marcus Rashford','MID',33),
+	 (454,70078,'Facundo Pellistri','F. Pellistri','MID',33),
+	 (455,18,'Jadon Sancho','Jadon Malik Sancho','MID',33),
+	 (456,547,'Donny van de Beek','D. van de Beek','MID',33),
+	 (457,908,'Anthony Martial','Anthony Jordan Martial','FWD',33),
+	 (458,288107,'Charlie McNeill','C. McNeill','FWD',33),
+	 (459,163054,'Shola Shoretire','S. Shoretire','FWD',33),
+	 (460,18885,'Karl Darlow','K. Darlow','GKP',34);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (461,18886,'Martin Dubravka','M. Dúbravka','GKP',34),
+	 (462,44912,'Mark Gillespie','M. Gillespie','GKP',34),
+	 (463,1972,'Loris Karius','L. Karius','GKP',34),
+	 (464,18911,'Nick Pope','N. Pope','GKP',34),
+	 (465,38734,'Sven Botman','S. Botman','DEF',34),
+	 (466,18961,'Dan Burn','D. Burn','DEF',34),
+	 (467,18892,'Paul Dummett','P. Dummett','DEF',34),
+	 (468,2855,'Emil Krafth','E. Krafth','DEF',34),
+	 (469,18894,'Jamaal Lascelles','J. Lascelles','DEF',34),
+	 (470,19076,'Jamal Lewis','J. Lewis','DEF',34);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (471,18896,'Javier Manquillo','Javi Manquillo','DEF',34),
+	 (472,18903,'Matt Ritchie','M. Ritchie','DEF',34),
+	 (473,2806,'Fabian Schär','F. Schär','DEF',34),
+	 (474,18941,'Matt Targett','M. Targett','DEF',34),
+	 (475,169,'Kieran Trippier','K. Trippier','DEF',34),
+	 (476,68127,'Kelland Watts','K. Watts','DEF',34),
+	 (477,2507,'Miguel Almirón','M. Almirón','MID',34),
+	 (478,138908,'Elliot Anderson','E. Anderson','MID',34),
+	 (479,18873,'Ryan Fraser','R. Fraser','MID',34),
+	 (480,10135,'Bruno Guimarães','Bruno Guimarães','MID',34);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (481,723,'Joelinton','Joelinton Cassio Apolinário de Lira','MID',34),
+	 (482,349987,'Garang Kuol','G. Kuol','MID',34),
+	 (483,18901,'Sean Longstaff','S. Longstaff','MID',34),
+	 (484,19163,'Jacob Murphy','J. Murphy','MID',34),
+	 (485,22173,'Allan Saint-Maximin','Allan Irénée Saint-Maximin','MID',34),
+	 (486,18904,'Jonjo Shelvey','J. Shelvey','MID',34),
+	 (487,1463,'Joe Willock','J. Willock','MID',34),
+	 (488,2864,'Alexander Isak','Alexander Isak','FWD',34),
+	 (489,2939,'Callum Wilson','Callum Eddie Graham Wilson','FWD',34),
+	 (490,18931,'Chris Wood','Christopher Grant Wood','FWD',34);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (491,19088,'Dean Henderson','D. Henderson','GKP',65),
+	 (492,18836,'Wayne Hennessey','W. Hennessey','GKP',65),
+	 (493,17448,'Jordan Smith','J. Smith','GKP',65),
+	 (494,163,'Serge Aurier','S. Aurier','DEF',65),
+	 (495,329357,'Zach Abbott','Zach Abbott','DEF',65),
+	 (496,174918,'Loïc Badé','L. Badé','DEF',65),
+	 (497,84081,'Giulian Biancone','G. Biancone','DEF',65),
+	 (498,18739,'Willy Boly','W. Boly','DEF',65),
+	 (499,18863,'Steve Cook','S. Cook','DEF',65),
+	 (500,327606,'Aaron Donnelly','Aaron Donnelly','DEF',65);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (501,10122,'Renan Lodi','Renan Lodi','DEF',65),
+	 (502,279,'Loïc Mbe Soh','L. Mbe Soh','DEF',65),
+	 (503,44811,'Scott McKenna','S. McKenna','DEF',65),
+	 (504,25916,'Moussa Niakhaté','M. Niakhaté','DEF',65),
+	 (505,19610,'Omar Richards','O. Richards','DEF',65),
+	 (506,17365,'Harry Toffolo','H. Toffolo','DEF',65),
+	 (507,138780,'Neco Williams','N. Williams','DEF',65),
+	 (508,1746,'Joe Worrall','J. Worrall','DEF',65),
+	 (509,18996,'Harry Arter','H. Arter','MID',65),
+	 (510,40401,'Cafu','Cafú','MID',65);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (511,19299,'Jack Colback','J. Colback','MID',65),
+	 (512,284316,'Billy Fewster','Billy Charles Storm Fewster','MID',65),
+	 (513,2807,'Remo Freuler','R. Freuler','MID',65),
+	 (514,18746,'Morgan Gibbs-White','M. Gibbs-White','MID',65),
+	 (515,327603,'Alex Gibson-Hammond','Alex Gibson-Hammond','MID',65),
+	 (516,325967,'Oliver Hammond','O. Hammond','MID',65),
+	 (517,2991,'Cheikhou Kouyaté','C. Kouyaté','MID',65),
+	 (518,900,'Jesse Lingard','J. Lingard','MID',65),
+	 (519,24882,'Orel Mangala','O. Mangala','MID',65),
+	 (520,129712,'Alex Mighten','Alexander Cole Mighten','MID',65);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (521,20503,'Lewis O''Brien','L. O''Brien','MID',65),
+	 (522,9926,'Gustavo Scarpa','Gustavo Scarpa','MID',65),
+	 (523,19305,'Ryan Yates','R. Yates','MID',65),
+	 (524,8598,'Taiwo Awoniyi','Taiwo Micheal Awoniyi','FWD',65),
+	 (525,80,'Emmanuel Dennis','Emmanuel Bonaventure Dennis','FWD',65),
+	 (526,129711,'Brennan Johnson','B. Johnson','FWD',65),
+	 (527,18884,'Sam Surridge','Samuel William Surridge','FWD',65),
+	 (528,339138,'Dale Taylor','Dale Taylor','FWD',65),
+	 (529,19842,'Lyle Taylor','Lyle James Alfred Taylor','FWD',65),
+	 (530,105971,'Gavin Bazunu','G. Bazunu','GKP',41);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (531,2275,'Willy Caballero','W. Caballero','GKP',41),
+	 (532,18935,'Alex McCarthy','A. McCarthy','GKP',41),
+	 (533,25061,'Armel Bella-Kotchap','A. Bella-Kotchap','DEF',41),
+	 (534,1902,'Duje Caleta-Car','D. Caleta-Car','DEF',41),
+	 (535,284264,'Juan Larios','Juan Larios','DEF',41),
+	 (536,158694,'Tino Livramento','V. Livramento','DEF',41),
+	 (537,30476,'Lyanco','Lyanco','DEF',41),
+	 (538,20600,'Romain Perraud','R. Perraud','DEF',41),
+	 (539,47480,'Mohammed Salisu','M. Salisu','DEF',41),
+	 (540,171,'Kyle Walker-Peters','K. Walker-Peters','DEF',41);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (541,19825,'Joe Aribo','J. Aribo','MID',41),
+	 (542,18945,'Stuart Armstrong','S. Armstrong','MID',41),
+	 (543,20557,'Ibrahima Diallo','I. Diallo','MID',41),
+	 (544,2114,'Moussa Djenepo','M. Djenepo','MID',41),
+	 (545,278085,'Samuel Edozie','S. Edozie','MID',41),
+	 (546,284424,'Diamond Edwards','D. Edwards','MID',41),
+	 (547,18946,'Mohamed Elyounoussi','M. Elyounoussi','MID',41),
+	 (548,284423,'Ryan Finnigan','R. Finnigan','MID',41),
+	 (549,282125,'Roméo Lavia','R. Lavia','MID',41),
+	 (550,1456,'Ainsley Maitland-Niles','A. Maitland-Niles','MID',41);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (551,284427,'Lewis Payne','L. Payne','MID',41),
+	 (552,18769,'Theo Walcott','Theo James Walcott','MID',41),
+	 (553,2938,'James Ward-Prowse','J. Ward-Prowse','MID',41),
+	 (554,19524,'Che Adams','Ché Zach Everton Fred Adams','FWD',41),
+	 (555,19484,'Adam Armstrong','Adam James Armstrong','FWD',41),
+	 (556,303460,'Dominic Ballard','D. Ballard','FWD',41),
+	 (557,190686,'Sékou Mara','Sékou Mara','FWD',41),
+	 (558,156428,'Brandon Austin','B. Austin','GKP',47),
+	 (559,18932,'Fraser Forster','F. Forster','GKP',47),
+	 (560,159,'Hugo Lloris','H. Lloris','GKP',47);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (561,164,'Ben Davies','B. Davies','DEF',47),
+	 (562,175,'Eric Dier','E. Dier','DEF',47),
+	 (563,18742,'Matt Doherty','M. Doherty','DEF',47),
+	 (564,154800,'Malachi Walcott','M. Fagan-Walcott','DEF',47),
+	 (565,133,'Clément Lenglet','C. Lenglet','DEF',47),
+	 (566,30776,'Cristian Romero','C. Romero','DEF',47),
+	 (567,1566,'Emerson Royal','Emerson','DEF',47),
+	 (568,162607,'Marqes Muir','M. Muir','DEF',47),
+	 (569,60353,'Maksim Paskotsi','M. Paskotsi','DEF',47),
+	 (570,207,'Ivan Periši?','I. Periši?','DEF',47);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (571,168,'Davinson Sánchez','D. Sánchez','DEF',47),
+	 (572,331009,'Charlie Sayers','C. Sayers','DEF',47),
+	 (573,19032,'Ryan Sessegnon','R. Sessegnon','DEF',47),
+	 (574,19235,'Djed Spence','D. Spence','DEF',47),
+	 (575,149550,'Japhet Tanganga','J. Tanganga','DEF',47),
+	 (576,863,'Rodrigo Bentancur','R. Bentancur','MID',47),
+	 (577,18968,'Yves Bissouma','Y. Bissouma','MID',47),
+	 (578,273757,'Alfie Devine','A. Devine','MID',47),
+	 (579,2061,'Bryan Gil','Bryan Gil Salvatierra','MID',47),
+	 (580,2735,'Pierre-Emile Højbjerg','P. Højbjerg','MID',47);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (581,30435,'Dejan Kulusevski','D. Kulusevski','MID',47),
+	 (582,178,'Lucas Moura','Lucas Moura','MID',47),
+	 (583,284414,'Romaine Mundle','R. Mundle','MID',47),
+	 (584,284415,'Yago Santiago','Yago Santiago','MID',47),
+	 (585,237129,'Pape Matar Sarr','P. Sarr','MID',47),
+	 (586,180,'Oliver Skipp','O. Skipp','MID',47),
+	 (587,186,'Heung-min Son','Son Heung-Min','MID',47),
+	 (588,138793,'Harvey White','H. White','MID',47),
+	 (589,184,'Harry Kane','Harry Edward Kane','FWD',47),
+	 (590,2413,'Richarlison','Richarlison de Andrade','FWD',47);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (591,253,'Alphonse Areola','A. Aréola','GKP',48),
+	 (592,2997,'Lukasz Fabianski','?. Fabia?ski','GKP',48),
+	 (593,144723,'Krisztián Hegyi','K. Hegyi','GKP',48),
+	 (594,19229,'Darren Randolph','D. Randolph','GKP',48),
+	 (595,21694,'Nayef Aguerd','N. Aguerd','DEF',48),
+	 (596,171058,'Harrison Ashby','H. Ashby','DEF',48),
+	 (597,171059,'Jamal Baptiste','J. Baptiste','DEF',48),
+	 (598,1231,'Vladimir Coufal','V. Coufal','DEF',48),
+	 (599,18813,'Aaron Cresswell','A. Cresswell','DEF',48),
+	 (600,19147,'Craig Dawson','C. Dawson','DEF',48);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (601,18823,'Ben Johnson','B. Johnson','DEF',48),
+	 (602,261,'Thilo Kehrer','T. Kehrer','DEF',48),
+	 (603,288279,'Luizão','Luizão','DEF',48),
+	 (604,18817,'Angelo Ogbonna','A. Ogbonna','DEF',48),
+	 (605,2284,'Emerson Palmieri','Emerson','DEF',48),
+	 (606,2726,'Kurt Zouma','K. Zouma','DEF',48),
+	 (607,144720,'Keenan Appiah-Forson','K. Appiah-Forson','MID',48),
+	 (608,19428,'Jarrod Bowen','Jarrod Bowen','MID',48),
+	 (609,19361,'Saïd Benrahma','Mohamed Saïd Benrahma','MID',48),
+	 (610,665,'Maxwel Cornet','Gnaly Albert Maxwel Cornet','MID',48);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (611,18820,'Conor Coventry','C. Coventry','MID',48),
+	 (612,19733,'Flynn Downes','F. Downes','MID',48),
+	 (613,278232,'Pierre Ekwah','P. Ekwah','MID',48),
+	 (614,1697,'Pablo Fornals','Pablo Fornals','MID',48),
+	 (615,2473,'Manuel Lanzini','M. Lanzini','MID',48),
+	 (616,1646,'Lucas Paquetá','Lucas Paquetá','MID',48),
+	 (617,284446,'Freddie Potts','F. Potts','MID',48),
+	 (618,2937,'Declan Rice','D. Rice','MID',48),
+	 (619,1243,'Tomas Soucek','T. Sou?ek','MID',48),
+	 (620,144725,'Kamarai Swyer','K. Simon-Swyer','MID',48);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (621,18819,'Michail Antonio','Michail Gregory Antonio','FWD',48),
+	 (622,284409,'Divin Mubama','D. Mubama','FWD',48),
+	 (623,30544,'Gianluca Scamacca','Gianluca Scamacca','FWD',48),
+	 (624,144741,'Louie Moulden','Louie Moulden','GKP',39),
+	 (625,1590,'José Sá','José Sá','GKP',39),
+	 (626,19173,'Matija Šarki?','M. Šarki?','GKP',39),
+	 (627,280689,'Jackson Smith','J. Smith','GKP',39),
+	 (628,21138,'Rayan Aït-Nouri','R. Aït Nouri','DEF',39),
+	 (629,280687,'Hugo Bueno','Hugo Bueno','DEF',39),
+	 (630,19495,'Nathan Collins','N. Collins','DEF',39);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (631,18740,'Jonny Otto','Jonny Castro','DEF',39),
+	 (632,18744,'Max Kilman','M. Kilman','DEF',39),
+	 (633,284237,'Dexter Lembikisa','D. Lembikisa','DEF',39),
+	 (634,195717,'Yerson Mosquera','Y. Mosquera','DEF',39),
+	 (635,130,'Nélson Semedo','Nélson Semedo','DEF',39),
+	 (636,41606,'Toti Gomes','Toti','DEF',39),
+	 (637,158432,'Chem Campbell','C. Campbell','MID',39),
+	 (638,195962,'Chiquinho','Francisco Jorge Tavares Oliveira','MID',39),
+	 (639,284262,'Harvey Griffiths','H. Griffiths','MID',39),
+	 (640,925,'Gonçalo Guedes','Gonçalo Manuel Ganchinho Guedes','MID',39);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (641,204033,'Joseph Hodge','J. Hodge','MID',39),
+	 (642,24888,'Hee-chan Hwang','Hwang Hee-Chan','MID',39),
+	 (643,2677,'João Moutinho','João Moutinho','MID',39),
+	 (644,1864,'Pedro Neto','Pedro Lomba Neto','MID',39),
+	 (645,2676,'Rúben Neves','Rúben Neves','MID',39),
+	 (646,41621,'Matheus Nunes','Matheus Nunes','MID',39),
+	 (647,1605,'Daniel Podence','Daniel Podence','MID',39),
+	 (648,61178,'Connor Ronan','C. Ronan','MID',39),
+	 (649,18753,'Adama Traoré','Adama Traoré Diarra','MID',39),
+	 (650,19307,'Léo Bonatini','Leonardo Bonatini Lohner Maia','FWD',39);
+INSERT INTO ffxg.players (id,api_id,full_name,commun_name,`position`,team_api_id) VALUES
+	 (651,54,'Diego Costa','Diego Costa','FWD',39),
+	 (652,1165,'Matheus Cunha','Matheus Cunha','FWD',39),
+	 (653,303019,'Nathan Fraser','N. Fraser','FWD',39),
+	 (654,2887,'Raúl Jiménez','Raúl Alonso Jiménez Rodríguez','FWD',39),
+	 (655,7722,'Sasa Kalajdzic','S. Kalajdzic','FWD',39);
